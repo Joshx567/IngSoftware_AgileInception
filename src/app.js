@@ -4,9 +4,9 @@ export const estaciones = [
     nombre: "Estacion 1",
     nombre: "Av. Beijing",
     combustible: {
-      gasolina: 5000,
-      diesel: 3000,
-      gnv: 1000
+      gasolina: 0,
+      diesel: 0,
+      gnv: 0
     },
     tickets: [], 
   },
@@ -15,7 +15,7 @@ export const estaciones = [
     nombre: "Estacion 2",
     nombre: "Av. America",
     combustible: {
-      gasolina: 0,
+      gasolina: 10,
       diesel: 2000,
       gnv: 500
     },
@@ -53,6 +53,7 @@ export const historialTickets = [];
 
 export const historialIngresos = [];
 export function registrarLitros(cantidad) {
+  estaciones[0].combustible.gasolina = cantidad;
   let cantidadIngresada = cantidad;
   historialIngresos.push({
     cantidadIngresada

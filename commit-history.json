@@ -49,5 +49,22 @@
     },
     "coverage": 0,
     "test_count": 2
+  },
+  {
+    "sha": "1a7314f790a17db5f02e45c5258824bbb31b9d09",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-04-29T21:02:52.000Z",
+      "message": "feat: Se actializa la cantidad ingresada de una estación",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/1a7314f790a17db5f02e45c5258824bbb31b9d09"
+    },
+    "stats": {
+      "total": 23,
+      "additions": 15,
+      "deletions": 8,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 3
   }
 ]
