@@ -15,5 +15,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "13a9850400c5a01dcdbc05889f0f25e2bff9394f",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-04-29T20:46:57.000Z",
+      "message": "feat: Ingresar cantidad recibida",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/13a9850400c5a01dcdbc05889f0f25e2bff9394f"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 4,
+      "deletions": 3,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]
