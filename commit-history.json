@@ -66,5 +66,22 @@
     },
     "coverage": 0,
     "test_count": 3
+  },
+  {
+    "sha": "cecb2cef024ec0c2532398da81f0eb85fef2b7bc",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-04-29T21:10:34.000Z",
+      "message": "feat: Actualizar cantidad de combustible de una estacion por id",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/cecb2cef024ec0c2532398da81f0eb85fef2b7bc"
+    },
+    "stats": {
+      "total": 19,
+      "additions": 12,
+      "deletions": 7,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 3
   }
 ]

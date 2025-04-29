@@ -52,12 +52,14 @@ export const operadores = [
 export const historialTickets = [];
 
 export const historialIngresos = [];
-export function registrarLitros(cantidad) {
-  estaciones[0].combustible.gasolina = cantidad;
+export function registrarLitros(cantidad,idEstacion) {
+  const estacion = estaciones.find(e => e.id === idEstacion);
+  estacion.combustible.gasolina = cantidad;
   let cantidadIngresada = cantidad;
   historialIngresos.push({
     cantidadIngresada
   });
   return cantidadIngresada;
 }
+
 
