@@ -49,5 +49,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "fd65be3c2c85f836b1f8a6bd0351d49b9d2b5a03",
+    "author": "Jose",
+    "commit": {
+      "date": "2025-04-29T20:36:02.000Z",
+      "message": "Feat: Se agrego al proyecto el punto 1.8, que es poder cancelar una reserva de ticket de gasolina que ya se haya reservado recientemente y que se vea en la parte del administrador el agregado y borrado de la misma",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/fd65be3c2c85f836b1f8a6bd0351d49b9d2b5a03"
+    },
+    "stats": {
+      "total": 44,
+      "additions": 37,
+      "deletions": 7,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]

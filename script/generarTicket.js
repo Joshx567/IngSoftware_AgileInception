@@ -9,6 +9,7 @@ async function cargarTicketsDesdeJSON() {
 
         console.log('Tickets cargados:', tickets);
 
+        // Añadimos solo los tickets que no están ya en todosLosTickets
         tickets.forEach(ticket => {
             if (!todosLosTickets.some(t => t.nro === ticket.nro)) {
                 todosLosTickets.push(ticket);
@@ -31,8 +32,8 @@ function crearTicket() {
     const usuario = document.getElementById('usuario').value.trim();
     const monto = parseFloat(document.getElementById('monto').value.trim());
 
-    if (!usuario || isNaN(monto) || monto <= 0) {
-        alert('Ingresa tu nombre de usuario y un monto válido.');
+    if (!usuario || isNaN(monto)) {
+        alert('Completa todos los campos correctamente.');
         return;
     }
 
@@ -99,3 +100,27 @@ function mostrarTickets() {
         });
     }
 }
+
+function cancelarTicket() {
+    if (!usuarioActual) {
+        alert('Primero debes ingresar tu nombre y crear un ticket.');
+        return;
+    }
+
+    const misTickets = todosLosTickets.filter(t => t.usuario === usuarioActual);
+    if (misTickets.length === 0) {
+        alert('No tienes tickets activos.');
+        return;
+    }
+
+    const confirmado = confirm('¿Estás seguro de cancelar tu ticket más reciente?');
+    if (!confirmado) return;
+
+    const ticketCancelado = misTickets[misTickets.length - 1];
+    todosLosTickets = todosLosTickets.filter(t => t.nro !== ticketCancelado.nro);
+    alert(`Ticket ${ticketCancelado.nro} cancelado.`);
+    mostrarTickets();
+}
+
+// Ejecutar al iniciar
+cargarTicketsDesdeJSON();
