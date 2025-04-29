@@ -29,8 +29,10 @@ function generarNumeroTicket() {
 
 function crearTicket() {
     const usuario = document.getElementById('usuario').value.trim();
-    if (!usuario) {
-        alert('Ingresa tu nombre de usuario.');
+    const monto = parseFloat(document.getElementById('monto').value.trim());
+
+    if (!usuario || isNaN(monto) || monto <= 0) {
+        alert('Ingresa tu nombre de usuario y un monto válido.');
         return;
     }
 
@@ -40,6 +42,7 @@ function crearTicket() {
     const nuevoTicket = {
         nro: generarNumeroTicket(),
         usuario: usuario,
+        monto: monto,
         hora: ahora.toTimeString().substring(0, 5),
         fecha: ahora.toISOString().substring(0, 10)
     };
@@ -71,6 +74,7 @@ function mostrarTickets() {
             div.className = 'ticket';
             div.innerHTML = `
                 <strong>Nro:</strong> ${ticket.nro}<br>
+                <strong>Monto:</strong> Bs ${ticket.monto}<br>
                 <strong>Hora:</strong> ${ticket.hora}<br>
                 <strong>Fecha:</strong> ${ticket.fecha}
             `;
@@ -87,6 +91,7 @@ function mostrarTickets() {
             div.innerHTML = `
                 <strong>Nro:</strong> ${ticket.nro}<br>
                 <strong>Usuario:</strong> ${ticket.usuario}<br>
+                <strong>Monto:</strong> Bs ${ticket.monto}<br>
                 <strong>Hora:</strong> ${ticket.hora}<br>
                 <strong>Fecha:</strong> ${ticket.fecha}
             `;

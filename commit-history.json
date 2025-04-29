@@ -32,5 +32,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "2f9ead3c3ba5ee8f5e80b0cc926038369623d3d5",
+    "author": "Jose",
+    "commit": {
+      "date": "2025-04-29T20:29:49.000Z",
+      "message": "Feat: Se agrego al proyecto el punto 1.7, que es sacar tickets con un monto de gasolina en bs y que se vea en la parte del administrador la reserva con el monto",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/2f9ead3c3ba5ee8f5e80b0cc926038369623d3d5"
+    },
+    "stats": {
+      "total": 15,
+      "additions": 11,
+      "deletions": 4,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]

@@ -5,7 +5,6 @@
     <title>Cero Cola - App de gasolina</title>
     <style>
         body { font-family: Arial, sans-serif; }
-        #lista-tickets { margin-top: 20px; }
         .ticket {
             border: 1px solid #ccc;
             padding: 10px;
@@ -24,6 +23,9 @@
             <h3>Sacar ticket</h3>
             <label for="usuario">Nombre de usuario:</label><br>
             <input type="text" id="usuario" placeholder="Ej: juan"><br><br>
+
+            <label for="monto">Monto de gasolina (en Bs):</label><br>
+            <input type="number" id="monto" placeholder="Ej: 50" min="1" step="0.01"><br><br>
 
             <button onclick="crearTicket()">Reservar Turno</button>
         </div>
