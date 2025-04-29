@@ -15,5 +15,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "d487b976be80787db8235fd2ca4e43787cd9c94e",
+    "author": "Jose",
+    "commit": {
+      "date": "2025-04-29T20:21:21.000Z",
+      "message": "Feat: Se agrego al proyecto el punto 1.6, que es sacar tickets y que se vea en la parte del administrador la reserva",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/d487b976be80787db8235fd2ca4e43787cd9c94e"
+    },
+    "stats": {
+      "total": 47,
+      "additions": 5,
+      "deletions": 42,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]

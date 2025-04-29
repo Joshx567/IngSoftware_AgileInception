@@ -9,7 +9,6 @@ async function cargarTicketsDesdeJSON() {
 
         console.log('Tickets cargados:', tickets);
 
-        // Añadimos solo los tickets que no están ya en todosLosTickets
         tickets.forEach(ticket => {
             if (!todosLosTickets.some(t => t.nro === ticket.nro)) {
                 todosLosTickets.push(ticket);
@@ -30,10 +29,8 @@ function generarNumeroTicket() {
 
 function crearTicket() {
     const usuario = document.getElementById('usuario').value.trim();
-    const monto = parseFloat(document.getElementById('monto').value.trim());
-
-    if (!usuario || isNaN(monto)) {
-        alert('Completa todos los campos correctamente.');
+    if (!usuario) {
+        alert('Ingresa tu nombre de usuario.');
         return;
     }
 
@@ -43,7 +40,6 @@ function crearTicket() {
     const nuevoTicket = {
         nro: generarNumeroTicket(),
         usuario: usuario,
-        monto: monto,
         hora: ahora.toTimeString().substring(0, 5),
         fecha: ahora.toISOString().substring(0, 10)
     };
@@ -75,7 +71,6 @@ function mostrarTickets() {
             div.className = 'ticket';
             div.innerHTML = `
                 <strong>Nro:</strong> ${ticket.nro}<br>
-                <strong>Monto:</strong> Bs ${ticket.monto}<br>
                 <strong>Hora:</strong> ${ticket.hora}<br>
                 <strong>Fecha:</strong> ${ticket.fecha}
             `;
@@ -92,7 +87,6 @@ function mostrarTickets() {
             div.innerHTML = `
                 <strong>Nro:</strong> ${ticket.nro}<br>
                 <strong>Usuario:</strong> ${ticket.usuario}<br>
-                <strong>Monto:</strong> Bs ${ticket.monto}<br>
                 <strong>Hora:</strong> ${ticket.hora}<br>
                 <strong>Fecha:</strong> ${ticket.fecha}
             `;
@@ -100,27 +94,3 @@ function mostrarTickets() {
         });
     }
 }
-
-function cancelarTicket() {
-    if (!usuarioActual) {
-        alert('Primero debes ingresar tu nombre y crear un ticket.');
-        return;
-    }
-
-    const misTickets = todosLosTickets.filter(t => t.usuario === usuarioActual);
-    if (misTickets.length === 0) {
-        alert('No tienes tickets activos.');
-        return;
-    }
-
-    const confirmado = confirm('¿Estás seguro de cancelar tu ticket más reciente?');
-    if (!confirmado) return;
-
-    const ticketCancelado = misTickets[misTickets.length - 1];
-    todosLosTickets = todosLosTickets.filter(t => t.nro !== ticketCancelado.nro);
-    alert(`Ticket ${ticketCancelado.nro} cancelado.`);
-    mostrarTickets();
-}
-
-// Ejecutar al iniciar
-cargarTicketsDesdeJSON();
