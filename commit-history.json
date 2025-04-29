@@ -32,5 +32,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "edd0fb99efc450377c18e98fddffdcebcd678ba2",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-04-29T20:54:33.000Z",
+      "message": "feat: La cantidad ingresada se guarda en un historial",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/edd0fb99efc450377c18e98fddffdcebcd678ba2"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 11,
+      "deletions": 1,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 2
   }
 ]

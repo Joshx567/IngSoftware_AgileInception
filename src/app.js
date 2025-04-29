@@ -51,8 +51,12 @@ export const operadores = [
 
 export const historialTickets = [];
 
+export const historialIngresos = [];
 export function registrarLitros(cantidad) {
   let cantidadIngresada = cantidad;
+  historialIngresos.push({
+    cantidadIngresada
+  });
   return cantidadIngresada;
 }
 
