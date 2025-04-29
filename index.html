@@ -2,73 +2,51 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>App</title>
+    <title>Cero Cola - App de gasolina</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #lista-tickets { margin-top: 20px; }
+        .ticket {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-
     <div style="display: flex;">
-
-        <!--Sección Conductores-->
+        <!-- Sección Conductores -->
         <div style="flex: 1; padding: 20px;">
-            <h2>Conductor</h2>
+            <h1>Conductor: </h1>
 
-            <!-- Ver estaciones con combustible
-            <h3>Buscar estaciones disponibles</h3>
-            <button>Ver Estaciones Disponibles</button>
+            <h3>Sacar ticket</h3>
+            <label for="usuario">Nombre de usuario:</label><br>
+            <input type="text" id="usuario" placeholder="Ej: juan"><br><br>
 
-            Filtrar estaciones por tipo de combustible
-            <h3>Filtrar por tipo de combustible</h3>
-            <select>
-                <option>Gasolina</option>
-                <option>Diésel</option>
-                <option>GNV</option>
-            </select>
-            <button>Aplicar Filtro</button>
+            <label for="monto">Monto de gasolina(en Bs):</label><br>
+            <input type="number" id="monto" placeholder="Ej: 50"><br><br>
 
-            Ver tiempo estimado de espera
-            <h3>Tiempo estimado de espera</h3>
-            <button>Ver Tiempo de Espera</button>
+            <button onclick="crearTicket()">Reservar Turno</button>
 
-            Reservar turno
-            <h3>Reservar turno</h3>
-            <label for="reservar-litros">Cantidad deseada (litros o Bs):</label><br>
-            <input type="text" id="reservar-litros" placeholder="Ej: 50 litros o 200 Bs"><br><br>
-            <button>Reservar Turno</button>
-
-            Cancelar ticket
-            <h3>Cancelar ticket</h3>
-            <button>Cancelar Ticket Activo</button> -->
-
+            <h1>Cancelar ticket</h1>
+            <button onclick="cancelarTicket()">Cancelar Mi Ticket</button> 
         </div>
 
-        <!--Sección para Operarios-->
+        <!-- Sección Operarios -->
         <div style="flex: 1; padding: 20px; border-left: 1px solid black;">
             <h2>Operario de Estación</h2>
-            <p></p>
-             <!--
-            Registrar litros recibidos
-            <h3>Registrar litros recibidos</h3>
-            <label for="litros-recibidos">Litros recibidos:</label><br>
-            <input type="number" id="litros-recibidos" placeholder="Ej: 5000"><br><br>
-            <button>Registrar Entrada de Combustible</button>
+            
+            <h3>Mis tickets registrados</h3>
+            <div id="lista-mis-tickets">Cargando tickets...</div>
 
-            <Generar ticket de combustible
-            <h3>Generar ticket de combustible</h3>
-            <label for="generar-litros">Cantidad para el ticket:</label><br>
-            <input type="number" id="generar-litros" placeholder="Ej: 20 litros"><br><br>
-            <button>Generar Ticket</button>
-
-            Visualizar registro de tickets
-            <h3>Registro de tickets</h3>
-            <button>Ver Registro de Tickets</button>
-
-            Ver información de tickets activos 
-            <h3>Ver tickets activos</h3>
-            <button>Ver Tickets Activos</button>-->
+            <h3>Otros tickets registrados</h3>
+            <div id="lista-otros-tickets">Cargando tickets...</div>
 
         </div>
-
     </div>
 
+    <script src="script/generarTicket.js"></script>
 </body>
 </html>
