@@ -51,3 +51,7 @@ export const operadores = [
 
 export const historialTickets = [];
 
+export function registrarLitros() {
+  return 0;
+}
+

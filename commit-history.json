@@ -1,0 +1,19 @@
+[
+  {
+    "sha": "4dfa0b4dd6edf55a82866e839b543f4a12db6d0d",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-04-29T20:44:29.000Z",
+      "message": "feat: Funcion ingresar litros 1ra iteración TDD",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/4dfa0b4dd6edf55a82866e839b543f4a12db6d0d"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 11,
+      "deletions": 0,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 1
+  }
+]
