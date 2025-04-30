@@ -100,5 +100,22 @@
     },
     "coverage": 0,
     "test_count": 3
+  },
+  {
+    "sha": "5a1b90bd623b21bd4fa7cc75a4f3dfe81b18e084",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-04-30T02:09:18.000Z",
+      "message": "feat: Ingresar litros par cualquier tipo de combustible",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/5a1b90bd623b21bd4fa7cc75a4f3dfe81b18e084"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 11,
+      "deletions": 2,
+      "date": "2025-04-30"
+    },
+    "coverage": 0,
+    "test_count": 5
   }
 ]

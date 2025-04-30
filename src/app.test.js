@@ -1,14 +1,20 @@
 import { registrarLitros,historialIngresos,estaciones } from './app.js';
 
 describe("Registrar llegada de combustible", () => {
-    it("deberia registrar la llegada del combustible", () => {
+    it("deberia registrar la llegada del combustible gasolina", () => {
       expect(registrarLitros(1,1000,'gasolina','Carlos')).toEqual(1000);
+    });
+    it("deberia registrar la llegada del combustible gnv", () => {
+      expect(registrarLitros(1,1000,'gnv','Carlos')).toEqual(1000);
+    });
+    it("deberia registrar la llegada del combustible diesel", () => {
+      expect(registrarLitros(1,1000,'diesel','Carlos')).toEqual(1000);
     });
 });
 
 describe("Registrar llegada de combustible en historial", () => {
     it("deberia registrar la llegada del combustible en un historial", () => {
-      expect(historialIngresos.length).toEqual(1);
+      expect(historialIngresos.length).toEqual(3);
     });
 });
 
@@ -17,6 +23,9 @@ describe("Actualizar la cantidad de combustible de la estación", () => {
       const idEstacion = 1;
       const estacion = estaciones.find(e => e.id === idEstacion);
       expect(estacion.combustible.gasolina).toEqual(1000);
+      expect(estacion.combustible.gnv).toEqual(1000);
+      expect(estacion.combustible.diesel).toEqual(1000);
+
     });
 });
   
