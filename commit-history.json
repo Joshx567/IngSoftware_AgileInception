@@ -83,5 +83,22 @@
     },
     "coverage": 0,
     "test_count": 3
+  },
+  {
+    "sha": "188e84770708ef77e310a63ecddadc9d2bfc1e4e",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-04-30T02:04:57.000Z",
+      "message": "feat: Registro de datos adicionales al ingresar llegada de combustible por tipo",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/188e84770708ef77e310a63ecddadc9d2bfc1e4e"
+    },
+    "stats": {
+      "total": 14,
+      "additions": 9,
+      "deletions": 5,
+      "date": "2025-04-30"
+    },
+    "coverage": 0,
+    "test_count": 3
   }
 ]

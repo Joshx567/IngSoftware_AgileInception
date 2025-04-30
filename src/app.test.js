@@ -2,7 +2,7 @@ import { registrarLitros,historialIngresos,estaciones } from './app.js';
 
 describe("Registrar llegada de combustible", () => {
     it("deberia registrar la llegada del combustible", () => {
-      expect(registrarLitros(1000,1)).toEqual(1000);
+      expect(registrarLitros(1,1000,'gasolina','Carlos')).toEqual(1000);
     });
 });
 
@@ -18,5 +18,5 @@ describe("Actualizar la cantidad de combustible de la estación", () => {
       const estacion = estaciones.find(e => e.id === idEstacion);
       expect(estacion.combustible.gasolina).toEqual(1000);
     });
-  });
+});
   
