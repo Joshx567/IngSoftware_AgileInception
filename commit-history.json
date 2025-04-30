@@ -117,5 +117,22 @@
     },
     "coverage": 0,
     "test_count": 5
+  },
+  {
+    "sha": "664832cb5f8357df47deef7033b0e38ca6435277",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-04-30T02:34:22.000Z",
+      "message": "feat: Validar que la cantidad ingresada sea mayor a cero con mensaje de error",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/664832cb5f8357df47deef7033b0e38ca6435277"
+    },
+    "stats": {
+      "total": 22,
+      "additions": 20,
+      "deletions": 2,
+      "date": "2025-04-30"
+    },
+    "coverage": 0,
+    "test_count": 7
   }
 ]

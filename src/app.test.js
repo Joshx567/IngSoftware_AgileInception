@@ -10,6 +10,22 @@ describe("Registrar llegada de combustible", () => {
     it("deberia registrar la llegada del combustible diesel", () => {
       expect(registrarLitros(1,1000,'diesel','Carlos')).toEqual(1000);
     });
+    it("debería rechazar el registro negativo de combustible", () => {
+      try {
+        registrarLitros(1, -100, "gasolina", "Carlos");
+      } catch (error) {
+        expect(error).toBeInstanceOf(Error);
+        expect(error.message).toBe("Cantidad ingresada invalida");
+      }
+    });
+    it("debería rechazar el registro igual a cero de combustible", () => {
+      try {
+        registrarLitros(1, 0, "gnv", "Carlos");
+      } catch (error) {
+        expect(error).toBeInstanceOf(Error);
+        expect(error.message).toBe("Cantidad ingresada invalida");
+      }
+    });
 });
 
 describe("Registrar llegada de combustible en historial", () => {
@@ -25,7 +41,6 @@ describe("Actualizar la cantidad de combustible de la estación", () => {
       expect(estacion.combustible.gasolina).toEqual(1000);
       expect(estacion.combustible.gnv).toEqual(1000);
       expect(estacion.combustible.diesel).toEqual(1000);
-
     });
 });
   
