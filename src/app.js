@@ -61,9 +61,14 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
   if (cantidad <= 0){
     throw new Error("Cantidad ingresada invalida");
   }
-  estacion.combustible.gasolina = cantidad;
-  let cantidadIngresada = cantidad;
-  estacion.combustible[tipoCombustible] += cantidadIngresada;
+  const cantidadIngresada = cantidad;
+  if (tipoCombustible === "gasolina") {
+    estacion.combustible.gasolina += cantidadIngresada;
+  } else if (tipoCombustible === "diesel") {
+    estacion.combustible.diesel += cantidadIngresada;
+  } else if (tipoCombustible === "gnv") {
+    estacion.combustible.gnv += cantidadIngresada;
+  } 
   historialIngresos.push({
     idEstacion,
     tipoCombustible,

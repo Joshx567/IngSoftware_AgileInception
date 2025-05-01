@@ -168,5 +168,22 @@
     },
     "coverage": 0,
     "test_count": 8
+  },
+  {
+    "sha": "6243d90dbc22e3f007b8700db7f9c11f8b7e8807",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T15:06:23.000Z",
+      "message": "refact: Resttruturación para validar tipo de combustible par actualizar",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/6243d90dbc22e3f007b8700db7f9c11f8b7e8807"
+    },
+    "stats": {
+      "total": 15,
+      "additions": 10,
+      "deletions": 5,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 8
   }
 ]

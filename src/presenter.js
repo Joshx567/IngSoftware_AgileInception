@@ -11,9 +11,9 @@ registrarForm.addEventListener("submit", (event) => {
   const usuario = document.querySelector("#usuario-operario").value;
   try {
     registrarLitros(estacionId,cantidad,  tipo, usuario);
-    resultadoRegistrar.innerHTML = `<p>✅ Se registraron ${cantidad} litros en la estación ${estacionId}</p>`;
+    resultadoRegistrar.innerHTML = `<p> Se registraron ${cantidad} litros en la estación ${estacionId}</p>`;
   } catch (err) {
-    resultadoRegistrar.innerHTML = `<p style="color:red">❌ ${err.message}</p>`;
+    resultadoRegistrar.innerHTML = `<p style="color:red">${err.message}</p>`;
   }
 });
 
