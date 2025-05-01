@@ -355,5 +355,22 @@
     },
     "coverage": 0,
     "test_count": 14
+  },
+  {
+    "sha": "1f9e23656e859fa39f391e918bee63d8286afc12",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T21:25:26.000Z",
+      "message": "feat: Validación de horario de atanción para no crear tickets de combustible fuera de este",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/1f9e23656e859fa39f391e918bee63d8286afc12"
+    },
+    "stats": {
+      "total": 56,
+      "additions": 50,
+      "deletions": 6,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 16
   }
 ]

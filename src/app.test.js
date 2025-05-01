@@ -86,13 +86,21 @@ describe("Generar tickets de combustible", () => {
       expect(error.message).toBe("Cantidad ingresada supera el stock disponible");
     }
   });
+  it("debería rechazar el ticket fuera de horario de atanción", () => {
+    try {
+      generarTicket(3, 10,"gnv","Carlos");
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toBe("No se puede generar el ticket fuera del horario de atencion");
+    }
+  });
   //por si acaso
   it("debería rechazar un ticket para un combustible que no existe en", () => {
     try {
       generarTicket(2, 1,"gasolina-especial","Carlos");
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
-      expect(error.message).toBe("Tipo de combustible no disponible en esta estación");
+      expect(error.message).toBe("Tipo de combustible no disponible en esta estacion");
     }
   });
 });
@@ -100,5 +108,14 @@ describe("Generar tickets de combustible", () => {
 describe("Registrar ticket generado en un historial", () => {
   it("deberia registrar el ticket de combustible en un historial", () => {
   expect(historialTickets.length).toEqual(1);
+  });
+});
+
+describe("Actualizar la cantidad de combustible de la estación después de generar un ticket", () => {
+  it("debería actualizar los litros de combustible de la estación al generar un ticket", () => {
+    const idEstacion = 2;
+    const estacion = estaciones.find(e => e.id === idEstacion);
+    generarTicket(2, 1000,"diesel","Carlos"); 
+    expect(estacion.combustible.diesel).toEqual(1000);
   });
 });
