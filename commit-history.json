@@ -66,5 +66,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "191644a65aa3b4b2da55f8e4244772afe5dd0b5e",
+    "author": "MarceloNaviaR",
+    "commit": {
+      "date": "2025-05-01T19:13:51.000Z",
+      "message": "Estaciones",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/191644a65aa3b4b2da55f8e4244772afe5dd0b5e"
+    },
+    "stats": {
+      "total": 21,
+      "additions": 21,
+      "deletions": 0,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]
