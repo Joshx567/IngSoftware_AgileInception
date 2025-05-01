@@ -83,5 +83,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "e756e5ba08aacf02f7a370f6a26640eaba0a71ba",
+    "author": "MarceloNaviaR",
+    "commit": {
+      "date": "2025-05-01T20:26:30.000Z",
+      "message": "1.3 ver estaciones con conbustible disponible",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/e756e5ba08aacf02f7a370f6a26640eaba0a71ba"
+    },
+    "stats": {
+      "total": 47,
+      "additions": 46,
+      "deletions": 1,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]
