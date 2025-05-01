@@ -1,5 +1,5 @@
-// generarEstaciones.js - SPRINT 1.3
 let todasLasEstaciones = [];
+let filtroActivo = '';
 
 async function cargarEstacionesDesdeJSON() {
     try {
@@ -9,20 +9,29 @@ async function cargarEstacionesDesdeJSON() {
         mostrarEstaciones();
     } catch (error) {
         console.error('Error al cargar estaciones:', error);
-        todasLasEstaciones = []; // Datos vacíos si falla
+        todasLasEstaciones = [];
     }
+}
+
+function aplicarFiltroCombustible() {
+    filtroActivo = document.getElementById('filtro-combustible').value;
+    mostrarEstaciones();
 }
 
 function mostrarEstaciones() {
     const contenedor = document.getElementById('lista-estaciones-disponibles');
     contenedor.innerHTML = '';
     
-    if (todasLasEstaciones.length === 0) {
-        contenedor.innerHTML = '<em>No hay estaciones cargadas.</em>';
+    const estacionesFiltradas = filtroActivo ? 
+        todasLasEstaciones.filter(e => e.combustibles[filtroActivo]?.disponible) :
+        todasLasEstaciones;
+
+    if (estacionesFiltradas.length === 0) {
+        contenedor.innerHTML = '<em>No hay estaciones con este filtro.</em>';
         return;
     }
 
-    todasLasEstaciones.forEach(estacion => {
+    estacionesFiltradas.forEach(estacion => {
         const div = document.createElement('div');
         div.className = 'estacion';
         div.innerHTML = `
@@ -35,4 +44,16 @@ function mostrarEstaciones() {
     });
 }
 
-window.addEventListener('DOMContentLoaded', cargarEstacionesDesdeJSON);
+window.addEventListener('DOMContentLoaded', () => {
+    cargarEstacionesDesdeJSON();
+    
+    // Crear filtro dinámicamente
+    const filtroHTML = `
+        <select id="filtro-combustible" onchange="aplicarFiltroCombustible()">
+            <option value="">Todos</option>
+            <option value="gasolina">Gasolina</option>
+            <option value="diesel">Diésel</option>
+        </select>
+    `;
+    document.querySelector('.seccion-estaciones').insertAdjacentHTML('afterbegin', filtroHTML);
+});

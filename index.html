@@ -13,6 +13,25 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
+        .seccion-estaciones {
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        .estacion {
+            border: 1px solid #4CAF50;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #f0fff4;
+        }
+        .controles-estaciones {
+            margin-bottom: 15px;
+        }
+        #filtro-combustible {
+            padding: 8px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -46,14 +65,31 @@
 
         </div>
     </div>
+    <div style="display: flex;">
     <div class="seccion-estaciones">
         <h2>Estaciones de Servicio</h2>
-        <h3>Estaciones Disponibles</h3>
+        
+        <div class="controles-estaciones">
+            <h3>Filtrar por combustible:</h3>
+            <select id="filtro-combustible">
+                <option value="">Todos</option>
+                <option value="gasolina">Gasolina</option>
+                <option value="diesel">Diésel</option>
+            </select>
+        </div>
+
         <div id="lista-estaciones-disponibles">
-            <!-- Se llenará dinámicamente con generarEstaciones.js -->
+            Cargando estaciones...
         </div>
     </div>
+
     <script src="script/generarTicket.js"></script>
-    <script>src="script/generarEstaciones.js"</script>
+    <script src="script/generarEstaciones.js"></script>
+    <script>
+        // Configuración para SP1.4
+        document.getElementById('filtro-combustible').addEventListener('change', function() {
+            filtrarPorCombustible(this.value);
+        });
+    </script>
 </body>
 </html>
