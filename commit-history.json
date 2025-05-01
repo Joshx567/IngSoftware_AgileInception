@@ -219,5 +219,22 @@
     },
     "coverage": 0,
     "test_count": 9
+  },
+  {
+    "sha": "7691924c63efc87fb03e75e7251ad8bef04c0a39",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T20:22:24.000Z",
+      "message": "feat: Generar ticket de combustible, con cantidad de litros ingresada",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/7691924c63efc87fb03e75e7251ad8bef04c0a39"
+    },
+    "stats": {
+      "total": 22,
+      "additions": 16,
+      "deletions": 6,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
   }
 ]

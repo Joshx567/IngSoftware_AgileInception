@@ -2,7 +2,7 @@ export const estaciones = [
   {
     id: 1,
     nombre: "Estacion 1",
-    nombre: "Av. Beijing",
+    direccion: "Av. Beijing",
     combustible: {
       gasolina: 0,
       diesel: 0,
@@ -13,7 +13,7 @@ export const estaciones = [
   {
     id: 2,
     nombre: "Estacion 2",
-    nombre: "Av. America",
+    direccion: "Av. America",
     combustible: {
       gasolina: 10,
       diesel: 2000,
@@ -80,9 +80,15 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
   return cantidadIngresada;
 }
 
-export function generarTicket() {
-  const ticket = {
 
+export function generarTicket(idEstacion, cantidad) {
+  const estacion = estaciones.find(e => e.id === idEstacion);
+  const cantidadIngresada = cantidad;
+  const idTicket = Math.floor(10000 + Math.random() * 90000).toString();
+  const ticket = {
+    idTicket,
+    estacion,
+    cantidadIngresada
   }
   return ticket;
 }
