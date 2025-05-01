@@ -52,9 +52,9 @@ export const operadores = [
 export const historialTickets = [];
 
 export const historialIngresos = [];
+
 export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario) {
   if (cantidad <= 0) throw new Error("Cantidad ingresada invalida");
-
   const estacion = estaciones.find(e => e.id === idEstacion);
   estacion.combustible.gasolina = cantidad;
   let cantidadIngresada = cantidad;
@@ -64,7 +64,8 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
     tipoCombustible,
     cantidadIngresada,
     operario,
-    fecha:new Date()
+    fecha:new Date(),
+    hora: new Date().toLocaleTimeString()
   });
   return cantidadIngresada;
 }

@@ -134,5 +134,22 @@
     },
     "coverage": 0,
     "test_count": 7
+  },
+  {
+    "sha": "e820755632a7ea702f860d4b2d7879a4a3342b7c",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T14:29:40.000Z",
+      "message": "feat: Ingresar datos de registro a través de un form para operarios",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/e820755632a7ea702f860d4b2d7879a4a3342b7c"
+    },
+    "stats": {
+      "total": 64,
+      "additions": 35,
+      "deletions": 29,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 7
   }
 ]

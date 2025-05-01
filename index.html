@@ -45,30 +45,30 @@
         <div style="flex: 1; padding: 20px; border-left: 1px solid black;">
             <h2>Operario de Estación</h2>
             <p></p>
+
+              <h2>Registrar litros</h2>
+                <form id="registrar-litros-form">
+                    <input id="estacion-id" type="number" placeholder="ID estación" required />
+                    <select id="tipo-combustible" required>
+                        <option value="">Selecciona tipo de combustible</option>
+                        <option value="gasolina">Gasolina</option>
+                        <option value="gnv">GNV</option>
+                        <option value="diesel">Diésel</option>
+                    </select>
+                    <input id="cantidad-litros" type="number" placeholder="Litros" required />
+                    <input id="usuario-operario" type="text" placeholder="Operario" required />
+                    <button type="submit">Registrar</button>
+                </form>
+                <div id="resultado-registrar"></div>
              <!--
-            Registrar litros recibidos
-            <h3>Registrar litros recibidos</h3>
-            <label for="litros-recibidos">Litros recibidos:</label><br>
-            <input type="number" id="litros-recibidos" placeholder="Ej: 5000"><br><br>
-            <button>Registrar Entrada de Combustible</button>
 
             <Generar ticket de combustible
             <h3>Generar ticket de combustible</h3>
             <label for="generar-litros">Cantidad para el ticket:</label><br>
             <input type="number" id="generar-litros" placeholder="Ej: 20 litros"><br><br>
-            <button>Generar Ticket</button>
-
-            Visualizar registro de tickets
-            <h3>Registro de tickets</h3>
-            <button>Ver Registro de Tickets</button>
-
-            Ver información de tickets activos 
-            <h3>Ver tickets activos</h3>
-            <button>Ver Tickets Activos</button>-->
-
+            <button>Generar Ticket</button> -->
         </div>
-
     </div>
-
+    <script type="module" src="./src/presenter.js"></script>
 </body>
 </html>

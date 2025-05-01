@@ -1,15 +1,20 @@
-import sumar from "./sumador";
+import { registrarLitros} from "./app.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const registrarForm = document.querySelector("#registrar-litros-form");
+const resultadoRegistrar = document.querySelector("#resultado-registrar");
 
-form.addEventListener("submit", (event) => {
+registrarForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  const estacionId = Number(document.querySelector("#estacion-id").value);
+  const tipo = document.querySelector("#tipo-combustible").value;
+  const cantidad = Number(document.querySelector("#cantidad-litros").value);
+  const usuario = document.querySelector("#usuario-operario").value;
+  try {
+    registrarLitros(estacionId,cantidad,  tipo, usuario);
+    resultadoRegistrar.innerHTML = `<p>✅ Se registraron ${cantidad} litros en la estación ${estacionId}</p>`;
+  } catch (err) {
+    resultadoRegistrar.innerHTML = `<p style="color:red">❌ ${err.message}</p>`;
+  }
 });
+
+
