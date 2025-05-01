@@ -60,4 +60,20 @@ describe("Generar tickets de combustible", () => {
     expect(ticket).toHaveProperty("cantidadIngresada", 30);
     expect(ticket.estacion.nombre).toBe("Estacion 1");
   });
+  it("debería rechazar el ticket igual a cero de combustible", () => {
+    try {
+      generarTicket(1, 0);
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toBe("Cantidad ingresada invalida");
+    }
+  });
+  it("debería rechazar el ticket para estación inexistente", () => {
+    try {
+      generarTicket(100, 12);
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toBe("La estacion ingresada no existe");
+    }
+  });
 });

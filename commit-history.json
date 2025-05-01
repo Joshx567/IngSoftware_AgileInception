@@ -236,5 +236,22 @@
     },
     "coverage": 0,
     "test_count": 9
+  },
+  {
+    "sha": "fc8956b4ff7a19e81b819485fa7d8760db46061b",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T20:26:36.000Z",
+      "message": "feat: Validaciones para no aceptar cantidad =>0  rechazar estaciones inexistentes",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/fc8956b4ff7a19e81b819485fa7d8760db46061b"
+    },
+    "stats": {
+      "total": 22,
+      "additions": 22,
+      "deletions": 0,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 11
   }
 ]
