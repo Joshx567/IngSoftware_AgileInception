@@ -91,9 +91,13 @@ export function generarTicket(idEstacion, cantidad, tipoCombustible, operario) {
     throw new Error("Cantidad ingresada invalida");
   }
   const combustibleDisponible = estacion.combustible?.[tipoCombustible];
+  if (combustibleDisponible === undefined) {
+    throw new Error("Tipo de combustible no disponible en esta estación");
+  }
   if (cantidadIngresada > combustibleDisponible) {
     throw new Error("Cantidad ingresada supera el stock disponible");
   }
+
   const nombreEstacion = estacion.nombre;
   const direccionEstacion = estacion.direccion;
   const idTicket = Math.floor(10000 + Math.random() * 90000).toString();

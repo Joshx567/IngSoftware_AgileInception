@@ -338,5 +338,22 @@
     },
     "coverage": 0,
     "test_count": 13
+  },
+  {
+    "sha": "2a1c6513fae9cd6218b842f8078a0eb82a8c911a",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T21:01:09.000Z",
+      "message": "feat: Por si acaso, no dejar generar ticket de combustible para un tipo que no se oferte en la estación",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/2a1c6513fae9cd6218b842f8078a0eb82a8c911a"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 13,
+      "deletions": 0,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 14
   }
 ]

@@ -86,6 +86,15 @@ describe("Generar tickets de combustible", () => {
       expect(error.message).toBe("Cantidad ingresada supera el stock disponible");
     }
   });
+  //por si acaso
+  it("debería rechazar un ticket para un combustible que no existe en", () => {
+    try {
+      generarTicket(2, 1,"gasolina-especial","Carlos");
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toBe("Tipo de combustible no disponible en esta estación");
+    }
+  });
 });
 
 describe("Registrar ticket generado en un historial", () => {
