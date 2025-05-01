@@ -151,5 +151,22 @@
     },
     "coverage": 0,
     "test_count": 7
+  },
+  {
+    "sha": "d42c097b72788e2c750aeff7afc3fde9515e3a0b",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T14:47:35.000Z",
+      "message": "feat: Se agregó validación para evitar estaciones inexistentes",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/d42c097b72788e2c750aeff7afc3fde9515e3a0b"
+    },
+    "stats": {
+      "total": 25,
+      "additions": 19,
+      "deletions": 6,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 8
   }
 ]

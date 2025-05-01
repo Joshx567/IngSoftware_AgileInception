@@ -26,6 +26,14 @@ describe("Registrar llegada de combustible", () => {
         expect(error.message).toBe("Cantidad ingresada invalida");
       }
     });
+    it("debería rechazar el registro de una estación inexistente", () => {
+      try {
+        registrarLitros(100, 12, "gasolina", "Carlos");
+      } catch (error) {
+        expect(error).toBeInstanceOf(Error);
+        expect(error.message).toBe("La estacion ingresada no existe");
+      }
+    });
 });
 
 describe("Registrar llegada de combustible en historial", () => {

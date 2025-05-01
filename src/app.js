@@ -26,12 +26,12 @@ export const estaciones = [
 export const conductores = [
   {
     ci: 1,
-    nombre: "Carlos Gomez",
+    nombre: "Carlos",
     ticketActivo: null
   },
   {
     ci: 2,
-    nombre: "Julieta Vallejo",
+    nombre: "Julieta",
     ticketActivo: null
   }
 ];
@@ -39,12 +39,12 @@ export const conductores = [
 export const operadores = [
   {
     id: 201,
-    nombre: "Carlos Rivero",
+    nombre: "Carlos",
     estacionId: 1
   },
   {
     id: 202,
-    nombre: "Camila Orellana",
+    nombre: "Camila",
     estacionId: 2
   }
 ];
@@ -54,11 +54,16 @@ export const historialTickets = [];
 export const historialIngresos = [];
 
 export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario) {
-  if (cantidad <= 0) throw new Error("Cantidad ingresada invalida");
   const estacion = estaciones.find(e => e.id === idEstacion);
+  if (!estacion){
+    throw new Error("La estacion ingresada no existe");
+  }
+  if (cantidad <= 0){
+    throw new Error("Cantidad ingresada invalida");
+  }
   estacion.combustible.gasolina = cantidad;
   let cantidadIngresada = cantidad;
-  estacion.combustible[tipoCombustible] += cantidad;
+  estacion.combustible[tipoCombustible] += cantidadIngresada;
   historialIngresos.push({
     idEstacion,
     tipoCombustible,
