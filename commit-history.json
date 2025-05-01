@@ -100,5 +100,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "b063311cc72ea3fb2a080c8f75d748964c611318",
+    "author": "MarceloNaviaR",
+    "commit": {
+      "date": "2025-05-01T20:39:03.000Z",
+      "message": "Correciones sprint1.3",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/b063311cc72ea3fb2a080c8f75d748964c611318"
+    },
+    "stats": {
+      "total": 54,
+      "additions": 27,
+      "deletions": 27,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]

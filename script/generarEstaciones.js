@@ -1,38 +1,38 @@
+// generarEstaciones.js - SPRINT 1.3
 let todasLasEstaciones = [];
-let estacionFiltrada = '';
-//let mostrarTiempos = false; 
 
-// -------------------------------
-// SPRINT 1.3: Ver estaciones con combustible disponible
-// -------------------------------
 async function cargarEstacionesDesdeJSON() {
     try {
         const response = await fetch('../estaciones.json');
         if (!response.ok) throw new Error('Error HTTP: ' + response.status);
-        const estaciones = await response.json();
-
-        console.log('Estaciones cargadas:', estaciones);
-
-        estaciones.forEach(estacion => {
-            if (!todasLasEstaciones.some(e => e.id === estacion.id)) {
-                todasLasEstaciones.push(estacion);
-            }
-        });
-
+        todasLasEstaciones = await response.json();
         mostrarEstaciones();
     } catch (error) {
         console.error('Error al cargar estaciones:', error);
-        // Datos de ejemplo si falla la carga
-        todasLasEstaciones = [
-            {
-                id: 1,
-                nombre: "Estación de Emergencia",
-                ubicacion: "Calle Falsa 123",
-                combustibles: {
-                    gasolina: { disponible: true, litros: 1000, tiempoEspera: 45 },
-                    diesel: { disponible: false, litros: 0, tiempoEspera: 0 }
-                }
-            }
-        ];
+        todasLasEstaciones = []; // Datos vacíos si falla
     }
 }
+
+function mostrarEstaciones() {
+    const contenedor = document.getElementById('lista-estaciones-disponibles');
+    contenedor.innerHTML = '';
+    
+    if (todasLasEstaciones.length === 0) {
+        contenedor.innerHTML = '<em>No hay estaciones cargadas.</em>';
+        return;
+    }
+
+    todasLasEstaciones.forEach(estacion => {
+        const div = document.createElement('div');
+        div.className = 'estacion';
+        div.innerHTML = `
+            <strong>${estacion.nombre}</strong><br>
+            <em>${estacion.ubicacion}</em><br>
+            Gasolina: ${estacion.combustibles.gasolina.disponible ? '✅' : '❌'}<br>
+            Diésel: ${estacion.combustibles.diesel.disponible ? '✅' : '❌'}
+        `;
+        contenedor.appendChild(div);
+    });
+}
+
+window.addEventListener('DOMContentLoaded', cargarEstacionesDesdeJSON);
