@@ -74,7 +74,7 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
     tipoCombustible,
     cantidadIngresada,
     operario,
-    fecha:new Date(),
+    fecha:new Date().toLocaleDateString(),
     hora: new Date().toLocaleTimeString()
   });
   return cantidadIngresada;

@@ -38,7 +38,7 @@ describe("Registrar llegada de combustible", () => {
 
 describe("Registrar llegada de combustible en un historial", () => {
     it("deberia registrar la llegada del combustible en un historial", () => {
-      expect(historialIngresos.length).toEqual(3);
+    expect(historialIngresos.length).toEqual(3);
     });
 });
 
