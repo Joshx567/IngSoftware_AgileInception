@@ -1,4 +1,4 @@
-import { registrarLitros, generarTicket, historialIngresos, estaciones } from './app.js';
+import { registrarLitros, generarTicket, historialIngresos, historialTickets, estaciones } from './app.js';
 
 describe("Registrar llegada de combustible", () => {
     it("deberia registrar la llegada del combustible gasolina", () => {
@@ -77,5 +77,11 @@ describe("Generar tickets de combustible", () => {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("La estacion ingresada no existe");
     }
+  });
+});
+
+describe("Registrar ticket generado en un historial", () => {
+  it("deberia registrar el ticket de combustible en un historial", () => {
+  expect(historialTickets.length).toEqual(1);
   });
 });

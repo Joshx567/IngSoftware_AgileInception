@@ -304,5 +304,22 @@
     },
     "coverage": 0,
     "test_count": 11
+  },
+  {
+    "sha": "b925c69d0135329bbf55c122635e5cece80cf565",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T20:47:00.000Z",
+      "message": "feat: Se registran los tickets generados un historial, se añadieron hora y fecha para el ticket",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/b925c69d0135329bbf55c122635e5cece80cf565"
+    },
+    "stats": {
+      "total": 18,
+      "additions": 15,
+      "deletions": 3,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 12
   }
 ]
