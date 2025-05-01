@@ -321,5 +321,22 @@
     },
     "coverage": 0,
     "test_count": 12
+  },
+  {
+    "sha": "34db3d251f7fe56a37b556eddfba6af67f3dadbf",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T20:56:02.000Z",
+      "message": "feat: No permitir generar un ticket de combustible si la cantidad ingresada supera la que se tiene en stock",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/34db3d251f7fe56a37b556eddfba6af67f3dadbf"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 16,
+      "deletions": 4,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 13
   }
 ]

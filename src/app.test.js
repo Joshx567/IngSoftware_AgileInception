@@ -54,7 +54,7 @@ describe("Actualizar la cantidad de combustible de la estación", () => {
 
 describe("Generar tickets de combustible", () => {
   it("debería generar un ticket válido para una estación existente", () => {
-    const ticket = generarTicket(1, 30,"gnv"); 
+    const ticket = generarTicket(1, 30,"gnv","Carlos"); 
     expect(ticket).toHaveProperty("idTicket");
     expect(ticket).toHaveProperty("nombreEstacion","Estacion 1");
     expect(ticket).toHaveProperty("direccionEstacion","Av. Beijing");
@@ -64,7 +64,7 @@ describe("Generar tickets de combustible", () => {
   });
   it("debería rechazar el ticket igual a cero de combustible", () => {
     try {
-      generarTicket(1, 0);
+      generarTicket(1, 0,"gnv","Carlos");
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("Cantidad ingresada invalida");
@@ -76,6 +76,14 @@ describe("Generar tickets de combustible", () => {
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("La estacion ingresada no existe");
+    }
+  });
+  it("debería rechazar un ticket que supere el inventario actual", () => {
+    try {
+      generarTicket(2, 11,"gasolina","Carlos");
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toBe("Cantidad ingresada supera el stock disponible");
     }
   });
 });

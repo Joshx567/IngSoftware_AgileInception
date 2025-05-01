@@ -81,7 +81,7 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
 }
 
 
-export function generarTicket(idEstacion, cantidad, tipoCombustible,operario) {
+export function generarTicket(idEstacion, cantidad, tipoCombustible, operario) {
   const estacion = estaciones.find(e => e.id === idEstacion);
   if (!estacion){
     throw new Error("La estacion ingresada no existe");
@@ -89,6 +89,10 @@ export function generarTicket(idEstacion, cantidad, tipoCombustible,operario) {
   const cantidadIngresada = cantidad;
   if (cantidadIngresada <= 0){
     throw new Error("Cantidad ingresada invalida");
+  }
+  const combustibleDisponible = estacion.combustible?.[tipoCombustible];
+  if (cantidadIngresada > combustibleDisponible) {
+    throw new Error("Cantidad ingresada supera el stock disponible");
   }
   const nombreEstacion = estacion.nombre;
   const direccionEstacion = estacion.direccion;
@@ -105,7 +109,7 @@ export function generarTicket(idEstacion, cantidad, tipoCombustible,operario) {
     hora: new Date().toLocaleTimeString()
   }
   historialTickets.push({
-      ticket
+    ticket
   });
   return ticket;
 }
