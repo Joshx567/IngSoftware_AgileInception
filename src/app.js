@@ -80,4 +80,9 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
   return cantidadIngresada;
 }
 
+export function generarTicket() {
+  const ticket = {
 
+  }
+  return ticket;
+}

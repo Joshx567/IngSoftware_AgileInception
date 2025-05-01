@@ -202,5 +202,22 @@
     },
     "coverage": 0,
     "test_count": 8
+  },
+  {
+    "sha": "d4a6a929263392480eaa01ca5bfa8e132879405c",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T15:16:06.000Z",
+      "message": "feat: Función crear ticket de combustible",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/d4a6a929263392480eaa01ca5bfa8e132879405c"
+    },
+    "stats": {
+      "total": 16,
+      "additions": 13,
+      "deletions": 3,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
   }
 ]

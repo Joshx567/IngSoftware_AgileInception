@@ -1,4 +1,4 @@
-import { registrarLitros,historialIngresos,estaciones } from './app.js';
+import { registrarLitros, generarTicket, historialIngresos, estaciones } from './app.js';
 
 describe("Registrar llegada de combustible", () => {
     it("deberia registrar la llegada del combustible gasolina", () => {
@@ -36,7 +36,7 @@ describe("Registrar llegada de combustible", () => {
     });
 });
 
-describe("Registrar llegada de combustible en historial", () => {
+describe("Registrar llegada de combustible en un historial", () => {
     it("deberia registrar la llegada del combustible en un historial", () => {
       expect(historialIngresos.length).toEqual(3);
     });
@@ -51,4 +51,9 @@ describe("Actualizar la cantidad de combustible de la estación", () => {
       expect(estacion.combustible.diesel).toEqual(1000);
     });
 });
-  
+
+describe("Generar tickets de combustible", () => {
+  it("debería generar ticekts de combustible para la estación", () => {
+    expect(generarTicket()).toEqual({});
+  });
+});
