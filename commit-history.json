@@ -185,5 +185,22 @@
     },
     "coverage": 0,
     "test_count": 8
+  },
+  {
+    "sha": "aea3ce8cbfc5a3fe32a6c92af73b1ca430d2f2be",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T15:08:29.000Z",
+      "message": "Refact: Añadido tipo de combustible registrado en el presenter",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/aea3ce8cbfc5a3fe32a6c92af73b1ca430d2f2be"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 8
   }
 ]
