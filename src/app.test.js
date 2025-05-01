@@ -54,7 +54,7 @@ describe("Actualizar la cantidad de combustible de la estación", () => {
 
 describe("Generar tickets de combustible", () => {
   it("debería generar un ticket válido para una estación existente", () => {
-    const ticket = generarTicket(1, 30,"gnv","Carlos"); 
+    const ticket = generarTicket(1, 30,"gnv","Carlos","10:00"); 
     expect(ticket).toHaveProperty("idTicket");
     expect(ticket).toHaveProperty("nombreEstacion","Estacion 1");
     expect(ticket).toHaveProperty("direccionEstacion","Av. Beijing");
@@ -64,7 +64,7 @@ describe("Generar tickets de combustible", () => {
   });
   it("debería rechazar el ticket igual a cero de combustible", () => {
     try {
-      generarTicket(1, 0,"gnv","Carlos");
+      generarTicket(1, 0,"gnv","Carlos","10:00");
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("Cantidad ingresada invalida");
@@ -72,7 +72,7 @@ describe("Generar tickets de combustible", () => {
   });
   it("debería rechazar el ticket para estación inexistente", () => {
     try {
-      generarTicket(100, 12);
+      generarTicket(100, 12,"Carlos","10:00");
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("La estacion ingresada no existe");
@@ -80,15 +80,15 @@ describe("Generar tickets de combustible", () => {
   });
   it("debería rechazar un ticket que supere el inventario actual", () => {
     try {
-      generarTicket(2, 11,"gasolina","Carlos");
+      generarTicket(2, 11,"gasolina","Carlos","10:00");
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("Cantidad ingresada supera el stock disponible");
     }
   });
-  it("debería rechazar el ticket fuera de horario de atanción", () => {
+  it("debería rechazar el ticket fuera de horario de atención", () => {
     try {
-      generarTicket(3, 10,"gnv","Carlos");
+      generarTicket(3, 10,"gnv","Carlos","23:00");
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("No se puede generar el ticket fuera del horario de atencion");
@@ -97,7 +97,7 @@ describe("Generar tickets de combustible", () => {
   //por si acaso
   it("debería rechazar un ticket para un combustible que no existe en", () => {
     try {
-      generarTicket(2, 1,"gasolina-especial","Carlos");
+      generarTicket(2, 1,"gasolina-especial","Carlos","10:00");
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("Tipo de combustible no disponible en esta estacion");
@@ -115,7 +115,7 @@ describe("Actualizar la cantidad de combustible de la estación después de gene
   it("debería actualizar los litros de combustible de la estación al generar un ticket", () => {
     const idEstacion = 2;
     const estacion = estaciones.find(e => e.id === idEstacion);
-    generarTicket(2, 1000,"diesel","Carlos"); 
+    generarTicket(2, 1000,"diesel","Carlos","10:00"); 
     expect(estacion.combustible.diesel).toEqual(1000);
   });
 });

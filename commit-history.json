@@ -372,5 +372,22 @@
     },
     "coverage": 0,
     "test_count": 16
+  },
+  {
+    "sha": "ce22d135743599a1cfa47dd2b4749aca797f81d1",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T22:44:03.000Z",
+      "message": "feat: Se cambió el manejo de hora para que sea ingresado por el operario, Se creó UI para generar tickets",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/ce22d135743599a1cfa47dd2b4749aca797f81d1"
+    },
+    "stats": {
+      "total": 77,
+      "additions": 52,
+      "deletions": 25,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 16
   }
 ]

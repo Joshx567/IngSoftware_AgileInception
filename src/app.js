@@ -98,7 +98,7 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
 }
 
 
-export function generarTicket(idEstacion, cantidad, tipoCombustible, operario) {
+export function generarTicket(idEstacion, cantidad, tipoCombustible, operario,horaTicket) {
   const estacion = estaciones.find(e => e.id === idEstacion);
   if (!estacion){
     throw new Error("La estacion ingresada no existe");
@@ -115,18 +115,18 @@ export function generarTicket(idEstacion, cantidad, tipoCombustible, operario) {
     throw new Error("Cantidad ingresada supera el stock disponible");
   }
 
-  const now = new Date();
-  const horaActual = now.getHours() * 60 + now.getMinutes();
+  const [horaTick, minPed] = horaTicket.split(":").map(Number);
+  const horaActual = horaTick * 60 + minPed;
+
   const [horaA, minA] = estacion.horaApertura.split(":").map(Number);
   const [horaC, minC] = estacion.horaCierre.split(":").map(Number);
   const horaApertura = horaA * 60 + minA;
   const horaCierre = horaC * 60 + minC;
-  const idTicket = Math.floor(10000 + Math.random() * 90000).toString();
 
   if (horaActual < horaApertura || horaActual > horaCierre) {
     throw new Error("No se puede generar el ticket fuera del horario de atencion");
   }
-  
+  const idTicket = Math.floor(10000 + Math.random() * 90000).toString();
   const ticket = {
     idTicket,
     idEstacion,
@@ -136,7 +136,7 @@ export function generarTicket(idEstacion, cantidad, tipoCombustible, operario) {
     cantidadIngresada,
     operario,
     fecha:new Date().toLocaleDateString(),
-    hora: new Date().toLocaleTimeString()
+    hora: horaTicket
   }
   estacion.combustible[tipoCombustible] -= cantidad;
   historialTickets.push({
