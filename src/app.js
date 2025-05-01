@@ -90,10 +90,14 @@ export function generarTicket(idEstacion, cantidad) {
   if (cantidadIngresada <= 0){
     throw new Error("Cantidad ingresada invalida");
   }
+  const nombreEstacion = estacion.nombre;
+  const direccionEstacion = estacion.direccion;
   const idTicket = Math.floor(10000 + Math.random() * 90000).toString();
   const ticket = {
     idTicket,
-    estacion,
+    idEstacion,
+    nombreEstacion,
+    direccionEstacion,
     cantidadIngresada
   }
   return ticket;

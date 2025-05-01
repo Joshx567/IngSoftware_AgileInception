@@ -253,5 +253,22 @@
     },
     "coverage": 0,
     "test_count": 11
+  },
+  {
+    "sha": "145bc1083c4c2e44b695e8ab2905cce984286cdf",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T20:33:47.000Z",
+      "message": "refact: Se guardará los datos de la estación en variables independientes para mayor control y facilidad de acceso",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/145bc1083c4c2e44b695e8ab2905cce984286cdf"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 9,
+      "deletions": 3,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 11
   }
 ]
