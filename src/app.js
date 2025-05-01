@@ -81,7 +81,7 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
 }
 
 
-export function generarTicket(idEstacion, cantidad) {
+export function generarTicket(idEstacion, cantidad, tipoCombustible) {
   const estacion = estaciones.find(e => e.id === idEstacion);
   if (!estacion){
     throw new Error("La estacion ingresada no existe");
@@ -98,6 +98,7 @@ export function generarTicket(idEstacion, cantidad) {
     idEstacion,
     nombreEstacion,
     direccionEstacion,
+    tipoCombustible,
     cantidadIngresada
   }
   return ticket;

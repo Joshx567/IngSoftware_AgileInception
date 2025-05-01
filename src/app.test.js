@@ -54,12 +54,12 @@ describe("Actualizar la cantidad de combustible de la estación", () => {
 
 describe("Generar tickets de combustible", () => {
   it("debería generar un ticket válido para una estación existente", () => {
-    const ticket = generarTicket(1, 30); 
+    const ticket = generarTicket(1, 30,"gnv"); 
     expect(ticket).toHaveProperty("idTicket");
-    expect(ticket).toHaveProperty("nombreEstacion");
-    expect(ticket).toHaveProperty("direccionEstacion");
+    expect(ticket).toHaveProperty("nombreEstacion","Estacion 1");
+    expect(ticket).toHaveProperty("direccionEstacion","Av. Beijing");
+    expect(ticket).toHaveProperty("tipoCombustible","gnv");
     expect(ticket).toHaveProperty("cantidadIngresada", 30);
-    expect(ticket.nombreEstacion).toBe("Estacion 1");
     console.log(ticket)
   });
   it("debería rechazar el ticket igual a cero de combustible", () => {

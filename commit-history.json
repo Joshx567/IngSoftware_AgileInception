@@ -270,5 +270,22 @@
     },
     "coverage": 0,
     "test_count": 11
+  },
+  {
+    "sha": "aaaad2ceb4e6968314c00a016b410eb57d208325",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-01T20:37:45.000Z",
+      "message": "feat: Se agregó el tipo de combustible al ticket de la estación",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/aaaad2ceb4e6968314c00a016b410eb57d208325"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 6,
+      "deletions": 5,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 11
   }
 ]
