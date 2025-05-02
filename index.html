@@ -49,37 +49,39 @@
     <div class="seccion-estaciones">
         <h2>Estaciones de Servicio</h2>
         
-        <div style="margin-bottom: 20px;">
-            <label for="selector-estaciones">Buscar estación específica:</label><br>
-            <select id="selector-estaciones">
-                <option value="">Seleccione una estación</option>
-            </select>
+        <!-- Sección de estaciones disponibles primero -->
+        <h3>Estaciones Disponibles</h3>
+        <div id="lista-estaciones-disponibles"></div>
+        
+        <!-- Sección de filtros después -->
+        <div class="seccion-filtros">
+            <h3>Filtrar Estaciones</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <label for="selector-estaciones">Seleccione una estación:</label>
+                <select id="selector-estaciones">
+                    <option value="">Todas las estaciones</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="selector-combustible">Filtrar por combustible:</label>
+                <select id="selector-combustible">
+                    <option value="">Todos los combustibles</option>
+                    <option value="gasolina">Gasolina</option>
+                    <option value="diesel">Diésel</option>
+                    <option value="gnv">GNV</option>
+                </select>
+                <button onclick="aplicarFiltro()" style="margin-left: 10px; background-color: #2196F3;">
+                    Aplicar Filtro
+                </button>
+                <button onclick="limpiarFiltro()" style="margin-left: 10px; background-color: #9e9e9e;">
+                    Limpiar
+                </button>
+            </div>
         </div>
         
-        <div class="filtro-combustible">
-            <strong>Filtrar por combustible:</strong><br><br>
-            <select id="selector-combustible">
-                <option value="">Todos los combustibles</option>
-                <option value="gasolina">Solo Gasolina</option>
-                <option value="diesel">Solo Diésel</option>
-                <option value="gnv">Solo GNV</option>
-            </select>
-            <button onclick="aplicarFiltro()">
-                Aplicar Filtro
-            </button>
-            <button onclick="limpiarFiltro()">
-                Limpiar
-            </button>
-        </div>
-        
-        <div id="detalle-estacion">
-            <!-- Detalles de la estación seleccionada -->
-        </div>
-        
-        <h3 style="margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Estaciones Disponibles</h3>
-        <div id="lista-estaciones-disponibles">
-            <!-- Lista de estaciones filtradas -->
-        </div>
+        <div id="detalle-estacion"></div>
     </div>
 
     <script src="script/generarTicket.js"></script>

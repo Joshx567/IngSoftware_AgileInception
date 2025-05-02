@@ -168,5 +168,39 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "b28eea4d718c786af0e8d6a93e8147a379ccdd29",
+    "author": "MarceloNaviaR",
+    "commit": {
+      "date": "2025-05-02T01:50:00.000Z",
+      "message": "Correciones sprint 1.4",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/b28eea4d718c786af0e8d6a93e8147a379ccdd29"
+    },
+    "stats": {
+      "total": 269,
+      "additions": 192,
+      "deletions": 77,
+      "date": "2025-05-02"
+    },
+    "coverage": 0,
+    "test_count": 1
+  },
+  {
+    "sha": "ed91df35951f9772a2ad81c3466d72d0f520ff44",
+    "author": "MarceloNaviaR",
+    "commit": {
+      "date": "2025-05-02T01:51:09.000Z",
+      "message": "1.5 ver tiempo de espera estimado",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/ed91df35951f9772a2ad81c3466d72d0f520ff44"
+    },
+    "stats": {
+      "total": 286,
+      "additions": 209,
+      "deletions": 77,
+      "date": "2025-05-02"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]
