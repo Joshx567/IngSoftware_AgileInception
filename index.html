@@ -49,19 +49,36 @@
     <div class="seccion-estaciones">
         <h2>Estaciones de Servicio</h2>
         
-        <div>
-            <label for="selector-estaciones">Seleccione una estación:</label><br>
+        <div style="margin-bottom: 20px;">
+            <label for="selector-estaciones">Buscar estación específica:</label><br>
             <select id="selector-estaciones">
-                <option value="">Cargando estaciones...</option>
+                <option value="">Seleccione una estación</option>
             </select>
         </div>
         
-        <div id="detalle-estacion">
-            <!-- Los detalles de la estación aparecerán aquí al seleccionar -->
+        <div class="filtro-combustible">
+            <strong>Filtrar por combustible:</strong><br><br>
+            <select id="selector-combustible">
+                <option value="">Todos los combustibles</option>
+                <option value="gasolina">Solo Gasolina</option>
+                <option value="diesel">Solo Diésel</option>
+                <option value="gnv">Solo GNV</option>
+            </select>
+            <button onclick="aplicarFiltro()">
+                Aplicar Filtro
+            </button>
+            <button onclick="limpiarFiltro()">
+                Limpiar
+            </button>
         </div>
         
+        <div id="detalle-estacion">
+            <!-- Detalles de la estación seleccionada -->
+        </div>
+        
+        <h3 style="margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Estaciones Disponibles</h3>
         <div id="lista-estaciones-disponibles">
-            <!-- Se mantiene como respaldo para mostrar todas las estaciones -->
+            <!-- Lista de estaciones filtradas -->
         </div>
     </div>
 
