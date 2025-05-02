@@ -1,40 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Cero Cola - App de gasolina</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        #lista-tickets { margin-top: 20px; }
-        .ticket {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        .seccion-estaciones {
-            margin-top: 30px;
-            padding: 20px;
-            border-top: 1px solid #eee;
-        }
-        .estacion {
-            border: 1px solid #4CAF50;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            background-color: #f0fff4;
-        }
-        .controles-estaciones {
-            margin-bottom: 15px;
-        }
-        #filtro-combustible {
-            padding: 8px;
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <title>Cero Cola - App de gasolina</title>
+     <style>
+         body { font-family: Arial, sans-serif; }
+         #lista-tickets { margin-top: 20px; }
+         .ticket {
+             border: 1px solid #ccc;
+             padding: 10px;
+             margin-bottom: 10px;
+             border-radius: 5px;
+             background-color: #f9f9f9;
+         }
+     </style>
+ </head>
+ <body>
     <div style="display: flex;">
         <!-- Sección Conductores -->
         <div style="flex: 1; padding: 20px;">
@@ -56,40 +37,35 @@
         <!-- Sección Operarios -->
         <div style="flex: 1; padding: 20px; border-left: 1px solid black;">
             <h2>Operario de Estación</h2>
-            
+
             <h3>Mis tickets registrados</h3>
             <div id="lista-mis-tickets">Cargando tickets...</div>
 
             <h3>Otros tickets registrados</h3>
             <div id="lista-otros-tickets">Cargando tickets...</div>
-
         </div>
     </div>
-    <div style="display: flex;">
+
     <div class="seccion-estaciones">
         <h2>Estaciones de Servicio</h2>
         
-        <div class="controles-estaciones">
-            <h3>Filtrar por combustible:</h3>
-            <select id="filtro-combustible">
-                <option value="">Todos</option>
-                <option value="gasolina">Gasolina</option>
-                <option value="diesel">Diésel</option>
+        <div>
+            <label for="selector-estaciones">Seleccione una estación:</label><br>
+            <select id="selector-estaciones">
+                <option value="">Cargando estaciones...</option>
             </select>
         </div>
-
+        
+        <div id="detalle-estacion">
+            <!-- Los detalles de la estación aparecerán aquí al seleccionar -->
+        </div>
+        
         <div id="lista-estaciones-disponibles">
-            Cargando estaciones...
+            <!-- Se mantiene como respaldo para mostrar todas las estaciones -->
         </div>
     </div>
 
     <script src="script/generarTicket.js"></script>
     <script src="script/generarEstaciones.js"></script>
-    <script>
-        // Configuración para SP1.4
-        document.getElementById('filtro-combustible').addEventListener('change', function() {
-            filtrarPorCombustible(this.value);
-        });
-    </script>
 </body>
 </html>
