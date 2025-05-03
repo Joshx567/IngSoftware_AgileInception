@@ -32,57 +32,60 @@
 
             <h1>Cancelar ticket</h1>
             <button onclick="cancelarTicket()">Cancelar Mi Ticket</button> 
+            <h3>Mis tickets registrados</h3>
+            <div id="lista-mis-tickets">Cargando tickets...</div>
+
+            <h3>Otros tickets registrados</h3>
+            <div id="lista-otros-tickets">Cargando tickets...</div>
+
+            <div class="seccion-estaciones">
+                <h2>Estaciones de Servicio</h2>
+                
+                <!-- Sección de estaciones disponibles primero -->
+                <h3>Estaciones Disponibles</h3>
+                <div id="lista-estaciones-disponibles"></div>
+                
+                <!-- Sección de filtros después -->
+                <div class="seccion-filtros">
+                    <h3>Filtrar Estaciones</h3>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label for="selector-estaciones">Seleccione una estación:</label>
+                        <select id="selector-estaciones">
+                            <option value="">Todas las estaciones</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="selector-combustible">Filtrar por combustible:</label>
+                        <select id="selector-combustible">
+                            <option value="">Todos los combustibles</option>
+                            <option value="gasolina">Gasolina</option>
+                            <option value="diesel">Diésel</option>
+                            <option value="gnv">GNV</option>
+                        </select>
+                        <button onclick="aplicarFiltro()" style="margin-left: 10px; background-color: #2196F3;">
+                            Aplicar Filtro
+                        </button>
+                        <button onclick="limpiarFiltro()" style="margin-left: 10px; background-color: #9e9e9e;">
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="detalle-estacion"></div>
+            </div>
         </div>
 
         <!-- Sección Operarios -->
         <div style="flex: 1; padding: 20px; border-left: 1px solid black;">
             <h2>Operario de Estación</h2>
 
-            <h3>Mis tickets registrados</h3>
-            <div id="lista-mis-tickets">Cargando tickets...</div>
-
-            <h3>Otros tickets registrados</h3>
-            <div id="lista-otros-tickets">Cargando tickets...</div>
+            
         </div>
     </div>
 
-    <div class="seccion-estaciones">
-        <h2>Estaciones de Servicio</h2>
-        
-        <!-- Sección de estaciones disponibles primero -->
-        <h3>Estaciones Disponibles</h3>
-        <div id="lista-estaciones-disponibles"></div>
-        
-        <!-- Sección de filtros después -->
-        <div class="seccion-filtros">
-            <h3>Filtrar Estaciones</h3>
-            
-            <div style="margin-bottom: 15px;">
-                <label for="selector-estaciones">Seleccione una estación:</label>
-                <select id="selector-estaciones">
-                    <option value="">Todas las estaciones</option>
-                </select>
-            </div>
-            
-            <div>
-                <label for="selector-combustible">Filtrar por combustible:</label>
-                <select id="selector-combustible">
-                    <option value="">Todos los combustibles</option>
-                    <option value="gasolina">Gasolina</option>
-                    <option value="diesel">Diésel</option>
-                    <option value="gnv">GNV</option>
-                </select>
-                <button onclick="aplicarFiltro()" style="margin-left: 10px; background-color: #2196F3;">
-                    Aplicar Filtro
-                </button>
-                <button onclick="limpiarFiltro()" style="margin-left: 10px; background-color: #9e9e9e;">
-                    Limpiar
-                </button>
-            </div>
-        </div>
-        
-        <div id="detalle-estacion"></div>
-    </div>
+
 
     <script src="script/generarTicket.js"></script>
     <script src="script/generarEstaciones.js"></script>

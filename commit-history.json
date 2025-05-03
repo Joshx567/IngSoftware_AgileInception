@@ -202,5 +202,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "3a10c59c78138d695d683d12d3ce66280e4994a2",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-03T00:50:33.000Z",
+      "message": "refact: Mover html para que esté en su lugar",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/3a10c59c78138d695d683d12d3ce66280e4994a2"
+    },
+    "stats": {
+      "total": 85,
+      "additions": 44,
+      "deletions": 41,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]
