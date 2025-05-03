@@ -32,5 +32,22 @@
     },
     "coverage": 0,
     "test_count": 16
+  },
+  {
+    "sha": "87afa4b51e15a572c499666b3157ca3ee31a83fa",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-03T23:51:40.000Z",
+      "message": "REFACT: Dejando la estrucutar como estaba antes, no puedo dar solucion a los fetch de JSON",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/87afa4b51e15a572c499666b3157ca3ee31a83fa"
+    },
+    "stats": {
+      "total": 189,
+      "additions": 127,
+      "deletions": 62,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 16
   }
 ]
