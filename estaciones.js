@@ -1,0 +1,78 @@
+export const estacionesDB = [
+    {
+      id: 1,
+      nombre: "Estación Principal",
+      ubicacion: "Av. Libertador",
+      horaApertura: "06:00",
+      horaCierre: "22:00",
+      combustibles: {
+        gasolina: {
+          disponible: false,
+          litros: 0,
+          tiempoEspera: 5
+        },
+        diesel: {
+          disponible: false,
+          litros: 0,
+          tiempoEspera: 8
+        },
+        gnv: {
+          disponible: false,
+          litros: 0,
+          tiempoEspera: 8
+        }
+      },
+      tickets: []
+    },
+    {
+      id: 2,
+      nombre: "Estación Norte",
+      ubicacion: "Av. America",
+      horaApertura: "08:00",
+      horaCierre: "19:00",
+      combustibles: {
+        gasolina: {
+          disponible: false,
+          litros: 0,
+          tiempoEspera: 5
+        },
+        diesel: {
+          disponible: true,
+          litros: 2000,
+          tiempoEspera: 3
+        },
+        gnv: {
+          disponible: true,
+          litros: 3200,
+          tiempoEspera: 3
+        }
+      },
+      tickets: []
+    },
+    {
+      id: 3,
+      nombre: "Estación Principal",
+      ubicacion: "Av. Circunvalacion",
+      horaApertura: "08:00",
+      horaCierre: "13:00",
+      combustibles: {
+        gasolina: {
+          disponible: false,
+          litros: 0,
+          tiempoEspera: 5
+        },
+        diesel: {
+          disponible: false,
+          litros: 0,
+          tiempoEspera: 8
+        },
+        gnv: {
+          disponible: true,
+          litros: 50,
+          tiempoEspera: 8
+        }
+      },
+      tickets: []
+    }
+  ];
+  

@@ -1,4 +1,6 @@
-import { registrarLitros, generarTicket, historialIngresos, historialTickets, estaciones } from './app.js';
+import { registrarLitros, generarTicket, historialIngresos, historialTickets} from './app.js';
+import {estacionesDB} from '../estaciones.js';
+
 
 describe("Registrar llegada de combustible", () => {
     it("deberia registrar la llegada del combustible gasolina", () => {
@@ -45,10 +47,10 @@ describe("Registrar llegada de combustible en un historial", () => {
 describe("Actualizar la cantidad de combustible de la estación", () => {
     it("debería actualizar los litros de combustible de la estación con ID 1", () => {
       const idEstacion = 1;
-      const estacion = estaciones.find(e => e.id === idEstacion);
-      expect(estacion.combustible.gasolina).toEqual(1000);
-      expect(estacion.combustible.gnv).toEqual(1000);
-      expect(estacion.combustible.diesel).toEqual(1000);
+      const estacion = estacionesDB.find(e => e.id === idEstacion);
+      expect(estacion.combustibles.gasolina.litros).toEqual(1000);
+      expect(estacion.combustibles.gnv.litros).toEqual(1000);
+      expect(estacion.combustibles.diesel.litros).toEqual(1000);
     });
 });
 
@@ -56,8 +58,8 @@ describe("Generar tickets de combustible", () => {
   it("debería generar un ticket válido para una estación existente", () => {
     const ticket = generarTicket(1, 30,"gnv","Carlos","10:00"); 
     expect(ticket).toHaveProperty("idTicket");
-    expect(ticket).toHaveProperty("nombreEstacion","Estacion 1");
-    expect(ticket).toHaveProperty("direccionEstacion","Av. Beijing");
+    expect(ticket).toHaveProperty("nombreEstacion","Estación Principal");
+    expect(ticket).toHaveProperty("direccionEstacion","Av. Libertador");
     expect(ticket).toHaveProperty("tipoCombustible","gnv");
     expect(ticket).toHaveProperty("cantidadIngresada", 30);
     console.log(ticket)
@@ -114,8 +116,8 @@ describe("Registrar ticket generado en un historial", () => {
 describe("Actualizar la cantidad de combustible de la estación después de generar un ticket", () => {
   it("debería actualizar los litros de combustible de la estación al generar un ticket", () => {
     const idEstacion = 2;
-    const estacion = estaciones.find(e => e.id === idEstacion);
+    const estacion = estacionesDB.find(e => e.id === idEstacion);
     generarTicket(2, 1000,"diesel","Carlos","10:00"); 
-    expect(estacion.combustible.diesel).toEqual(1000);
+    expect(estacion.combustibles.diesel.litros).toEqual(1000);
   });
 });

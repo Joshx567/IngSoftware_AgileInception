@@ -15,5 +15,22 @@
     },
     "coverage": 0,
     "test_count": 16
+  },
+  {
+    "sha": "ce088204896bda712db25e91b8eeb9625c60f2fb",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-03T03:58:54.000Z",
+      "message": "refact: Adaptar código a lo que está hecho...",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/ce088204896bda712db25e91b8eeb9625c60f2fb"
+    },
+    "stats": {
+      "total": 295,
+      "additions": 121,
+      "deletions": 174,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 16
   }
 ]

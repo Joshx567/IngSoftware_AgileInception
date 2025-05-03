@@ -1,22 +1,12 @@
+//import {estacionesDB } from '../estaciones.js';
 let todasLasEstaciones = [];
 let filtroCombustible = '';
 let filtroEstacionId = '';
 
 async function cargarEstacionesDesdeJSON() {
     try {
-        const response = await fetch('../estaciones.json');
-        if (!response.ok) throw new Error('Error HTTP: ' + response.status);
-        
-        todasLasEstaciones = await response.json();
-        console.log('Estaciones cargadas:', todasLasEstaciones);
-        
-        // Añadir tipo a cada combustible
-        todasLasEstaciones.forEach(estacion => {
-            if (estacion.combustibles.gasolina) estacion.combustibles.gasolina.tipo = 'gasolina';
-            if (estacion.combustibles.diesel) estacion.combustibles.diesel.tipo = 'diesel';
-            if (estacion.combustibles.gnv) estacion.combustibles.gnv.tipo = 'gnv';
-        });
-        
+        const datos = estacionesDB;
+        todasLasEstaciones = datos;
         inicializarInterfaz();
     } catch (error) {
         console.error('Error al cargar estaciones:', error);
@@ -68,29 +58,6 @@ async function cargarEstacionesDesdeJSON() {
                         disponible: true, 
                         litros: 1500, 
                         tiempoEspera: 10,
-                        tipo: "gnv"
-                    }
-                }
-            },
-            {
-                id: 3,
-                nombre: "Estación GNV",
-                ubicacion: "Av. Industrial 789",
-                horario: "24 horas",
-                tiempoBaseEspera: 3,
-                combustibles: {
-                    gasolina: { 
-                        disponible: false,
-                        tipo: "gasolina"
-                    },
-                    diesel: { 
-                        disponible: false,
-                        tipo: "diesel"
-                    },
-                    gnv: { 
-                        disponible: true, 
-                        litros: 3000, 
-                        tiempoEspera: 5,
                         tipo: "gnv"
                     }
                 }
@@ -286,4 +253,4 @@ function calcularTiempoPorCombustible(combustible, tickets) {
     return Math.round((combustible.tiempoEspera || 5) + (promedio * ticketsCombustible.length * 0.3));
 }
 
-window.addEventListener('DOMContentLoaded', cargarEstacionesDesdeJSON);
+cargarEstacionesDesdeJSON();
