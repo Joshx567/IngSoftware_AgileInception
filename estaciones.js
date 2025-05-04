@@ -47,7 +47,30 @@ export const estacionesDB = [
           tiempoEspera: 3
         }
       },
-      tickets: []
+      tickets: [
+        {
+          idTicket: 2,
+          idEstacion: 2,
+          nombreEstacion: "Estación Norte",
+          direccionEstacion: "Av. America",
+          tipoCombustible: "diesel",
+          cantidadIngresada: 200,
+          operario: "Juan Gómez",
+          fecha: new Date().toLocaleDateString(),
+          hora: "09:15:00"
+        },
+        {
+          idTicket: 3,
+          idEstacion: 2, 
+          nombreEstacion: "Estación Norte",
+          direccionEstacion: "Av. America",
+          tipoCombustible: "gnv",
+          cantidadIngresada: 30,
+          operario: "Luis Sánchez",
+          fecha: new Date().toLocaleDateString(),
+          hora: "10:45:00"
+        }
+      ]
     },
     {
       id: 3,

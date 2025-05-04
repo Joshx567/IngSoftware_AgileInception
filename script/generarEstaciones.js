@@ -1,11 +1,9 @@
 let todasLasEstaciones = [];
 let filtroCombustible = '';
 let filtroEstacionId = '';
-
 async function cargarEstacionesDesdeJSON() {
     try {
-        const response = await fetch("/estaciones.json");
-
+        const response = await fetch('../estaciones.json');
         if (!response.ok) throw new Error('Error HTTP: ' + response.status);
         
         todasLasEstaciones = await response.json();
@@ -20,11 +18,86 @@ async function cargarEstacionesDesdeJSON() {
         
         inicializarInterfaz();
     } catch (error) {
-        console.error('Error al cargar las estaciones:', error);
-        alert('No se pudieron cargar las estaciones, por favor intente más tarde.');
+        console.error('Error al cargar estaciones:', error);
+        // Datos de ejemplo con GNV
+        todasLasEstaciones = [
+            {
+                id: 1,
+                nombre: "Estación Principal",
+                ubicacion: "Av. Libertador 123",
+                horario: "06:00 - 22:00",
+                tiempoBaseEspera: 5,
+                combustibles: {
+                    gasolina: { 
+                        disponible: true, 
+                        litros: 2500, 
+                        tiempoEspera: 5,
+                        tipo: "gasolina"
+                    },
+                    diesel: { 
+                        disponible: true, 
+                        litros: 1800, 
+                        tiempoEspera: 8,
+                        tipo: "diesel"
+                    },
+                    gnv: { 
+                        disponible: false,
+                        tipo: "gnv"
+                    }
+                }
+            },
+            {
+                id: 2,
+                nombre: "Estación Norte",
+                ubicacion: "Av. Principal 456",
+                horario: "05:00 - 23:00",
+                tiempoBaseEspera: 7,
+                combustibles: {
+                    gasolina: { 
+                        disponible: false,
+                        tipo: "gasolina"
+                    },
+                    diesel: { 
+                        disponible: true, 
+                        litros: 3200, 
+                        tiempoEspera: 3,
+                        tipo: "diesel"
+                    },
+                    gnv: { 
+                        disponible: true, 
+                        litros: 1500, 
+                        tiempoEspera: 10,
+                        tipo: "gnv"
+                    }
+                }
+            },
+            {
+                id: 3,
+                nombre: "Estación GNV",
+                ubicacion: "Av. Industrial 789",
+                horario: "24 horas",
+                tiempoBaseEspera: 3,
+                combustibles: {
+                    gasolina: { 
+                        disponible: false,
+                        tipo: "gasolina"
+                    },
+                    diesel: { 
+                        disponible: false,
+                        tipo: "diesel"
+                    },
+                    gnv: { 
+                        disponible: true, 
+                        litros: 3000, 
+                        tiempoEspera: 5,
+                        tipo: "gnv"
+                    }
+                }
+            }
+        ];
+        inicializarInterfaz();
     }
 }
-
 
 function inicializarInterfaz() {
     mostrarSelectorEstaciones();

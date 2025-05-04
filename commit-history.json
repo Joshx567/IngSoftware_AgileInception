@@ -100,5 +100,22 @@
     },
     "coverage": 0,
     "test_count": 18
+  },
+  {
+    "sha": "11423082fbb415f3f789c3a4071a9dceabe880cf",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-04T00:46:30.000Z",
+      "message": "feat: Visualizar información de tickets de combustible de una estación",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/11423082fbb415f3f789c3a4071a9dceabe880cf"
+    },
+    "stats": {
+      "total": 188,
+      "additions": 180,
+      "deletions": 8,
+      "date": "2025-05-04"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]
