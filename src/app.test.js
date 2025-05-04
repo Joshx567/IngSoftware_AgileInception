@@ -40,6 +40,12 @@ describe("Registrar llegada de combustible", () => {
 
 describe("Registrar llegada de combustible en un historial", () => {
     it("deberia registrar la llegada del combustible en un historial", () => {
+    expect(historialIngresos.length).toEqual(3);
+    });
+});
+
+describe("Actualizar la cantidad de combustible de la estación", () => {
+    it("debería actualizar los litros de combustible de la estación con ID 1", () => {
       const idEstacion = 1;
       const estacion = estacionesDB.find(e => e.id === idEstacion);
       expect(estacion.combustibles.gasolina.litros).toEqual(1000);
@@ -48,18 +54,16 @@ describe("Registrar llegada de combustible en un historial", () => {
     });
 });
 
-describe("Actualizar la cantidad de combustible de la estación", () => {
-    it("debería actualizar los litros de combustible de la estación con ID 1", () => {
-      const idEstacion = 1;
-      const estacion = estacionesDB.find(e => e.id === idEstacion);
-      expect(estacion.combustibles.gasolina.disponible).toBe(true);
-    });
-});
 describe("Verificar la disponibilidad del combustible", () => {
-  it("deberia regresar true si el combustible está disponible", () => {
-  expect(historialIngresos.length).toEqual(3);
+  it("deberia regresar true si el combustible esta disponible", () => {
+    const idEstacion = 1;
+    const estacion = estacionesDB.find(e => e.id === idEstacion);
+    expect(estacion.combustibles.gasolina.disponible).toBe(true);
+    expect(estacion.combustibles.diesel.disponible).toBe(true);
+    expect(estacion.combustibles.gnv.disponible).toBe(true);
   });
 });
+
 describe("Generar tickets de combustible", () => {
   it("debería generar un ticket válido para una estación existente", () => {
     const ticket = generarTicket(1, 30,"gnv","Carlos","10:00"); 

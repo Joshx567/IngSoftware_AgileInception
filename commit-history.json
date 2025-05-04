@@ -66,5 +66,22 @@
     },
     "coverage": 0,
     "test_count": 17
+  },
+  {
+    "sha": "2e26be0b70c3985a2dc8e86fbf1df108553803a0",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-04T00:15:44.000Z",
+      "message": "feat: Pruebas para actualización de disponibilidad de los tres tipos de combustible, esta vez en su lugar correspondiente",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/2e26be0b70c3985a2dc8e86fbf1df108553803a0"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 12,
+      "deletions": 8,
+      "date": "2025-05-04"
+    },
+    "coverage": 0,
+    "test_count": 17
   }
 ]
