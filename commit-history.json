@@ -49,5 +49,22 @@
     },
     "coverage": 0,
     "test_count": 16
+  },
+  {
+    "sha": "3408e71e20281ec275f1139bcaaa8b85f84afa9f",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-04T00:08:13.000Z",
+      "message": "feat: Actualizar disponibilidad cuando los litros o cantidad de combustible cambia >0",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/3408e71e20281ec275f1139bcaaa8b85f84afa9f"
+    },
+    "stats": {
+      "total": 19,
+      "additions": 14,
+      "deletions": 5,
+      "date": "2025-05-04"
+    },
+    "coverage": 0,
+    "test_count": 17
   }
 ]
