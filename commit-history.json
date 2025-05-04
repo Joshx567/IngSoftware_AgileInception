@@ -83,5 +83,22 @@
     },
     "coverage": 0,
     "test_count": 17
+  },
+  {
+    "sha": "b9a0733d0889299fadeebb700fda87cb7a6874d5",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-04T00:29:03.000Z",
+      "message": "feat: Verificar que el ticket de combustible se registra en la estación para la que se creó",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/b9a0733d0889299fadeebb700fda87cb7a6874d5"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 8,
+      "deletions": 0,
+      "date": "2025-05-04"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]

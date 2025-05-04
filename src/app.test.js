@@ -131,3 +131,11 @@ describe("Actualizar la cantidad de combustible de la estación después de gene
     expect(estacion.combustibles.diesel.litros).toEqual(1000);
   });
 });
+
+describe("Verificar tickets de combustible registrados dentro de una estación", () => {
+  it("deberia tener una lista de tickets de combustible totales para una estación", () => {
+    const idEstacion = 1;
+    const estacion = estacionesDB.find(e => e.id === idEstacion);
+    expect(estacion.tickets.length).toBe(1);
+  });
+});
