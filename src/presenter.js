@@ -75,9 +75,11 @@ function mostrarTickets(tickets) {
     <th>Operario</th>
     <th>Fecha</th>
     <th>Hora</th>
+    <th>Conductores</th>
   `;
   tablaTickets.appendChild(encabezado);
-  tickets.forEach(ticket => {
+
+  tickets.forEach((ticket, index) => {
     const fila = document.createElement("tr");
     fila.innerHTML = `
       <td>${ticket.idTicket}</td>
@@ -86,7 +88,38 @@ function mostrarTickets(tickets) {
       <td>${ticket.operario}</td>
       <td>${ticket.fecha}</td>
       <td>${ticket.hora}</td>
+      <td><button data-ticket-index="${index}" class="ver-conductores-btn">👥 Ver</button></td>
     `;
     tablaTickets.appendChild(fila);
+  });
+
+  const botones = document.querySelectorAll(".ver-conductores-btn");
+  botones.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+      const ticketIndex = e.target.getAttribute("data-ticket-index");
+      mostrarConductores(tickets[ticketIndex]);
+    });
+  });
+}
+
+function mostrarConductores(ticket) {
+  const tablaConductores = document.querySelector("#tabla-conductores tbody");
+  tablaConductores.innerHTML = "";
+
+  if (!ticket.ticketConductores || ticket.ticketConductores.length === 0) {
+    tablaConductores.innerHTML = "<tr><td colspan='5'>Este ticket no tiene conductores registrados.</td></tr>";
+    return;
+  }
+
+  ticket.ticketConductores.forEach(conductor => {
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+      <td>${conductor.ci}</td>
+      <td>${conductor.nombre}</td>
+      <td>${conductor.placa}</td>
+      <td>${conductor.monto}</td>
+      <td>${conductor.horaAtencion}</td>
+    `;
+    tablaConductores.appendChild(fila);
   });
 }

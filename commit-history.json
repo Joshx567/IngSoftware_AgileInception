@@ -117,5 +117,22 @@
     },
     "coverage": 0,
     "test_count": 18
+  },
+  {
+    "sha": "032243080c7de124b021fe073f888fc06ee3424d",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-06T01:53:49.000Z",
+      "message": "feat: Mostrar datos de los tickets de conductores para un ticket de gasolina",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/032243080c7de124b021fe073f888fc06ee3424d"
+    },
+    "stats": {
+      "total": 55,
+      "additions": 53,
+      "deletions": 2,
+      "date": "2025-05-06"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]
