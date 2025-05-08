@@ -151,5 +151,22 @@
     },
     "coverage": 0,
     "test_count": 18
+  },
+  {
+    "sha": "c3521728d0479fe71c81ab6f78408b9815e21ccc",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-08T21:21:08.000Z",
+      "message": "Aumento de datos de prueba",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/c3521728d0479fe71c81ab6f78408b9815e21ccc"
+    },
+    "stats": {
+      "total": 73,
+      "additions": 61,
+      "deletions": 12,
+      "date": "2025-05-08"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]

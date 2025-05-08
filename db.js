@@ -9,17 +9,17 @@ export const estacionesDB = [
         gasolina: {
           disponible: false,
           litros: 0,
-          tiempoEspera: 5
+          tiempoPromedioCarga: 5
         },
         diesel: {
           disponible: false,
           litros: 0,
-          tiempoEspera: 8
+          tiempoPromedioCarga: 8
         },
         gnv: {
           disponible: false,
           litros: 0,
-          tiempoEspera: 8
+          tiempoPromedioCarga: 8
         }
       },
       ticketsCombustible: []
@@ -34,17 +34,17 @@ export const estacionesDB = [
         gasolina: {
           disponible: false,
           litros: 0,
-          tiempoEspera: 5
+          tiempoPromedioCarga: 5
         },
         diesel: {
           disponible: true,
           litros: 2000,
-          tiempoEspera: 3
+          tiempoPromedioCarga: 3
         },
         gnv: {
           disponible: true,
           litros: 3200,
-          tiempoEspera: 3
+          tiempoPromedioCarga: 3
         }
       },
       ticketsCombustible: [
@@ -57,7 +57,10 @@ export const estacionesDB = [
           cantidadIngresada: 200,
           operario: "Juan Gómez",
           fecha: new Date().toLocaleDateString(),
-          hora: "09:15:00"
+          hora: "09:15:00",
+          estado: "activo",
+          ticketsConductores:[
+          ]
         },
         {
           idTicket: 3,
@@ -69,6 +72,7 @@ export const estacionesDB = [
           operario: "Luis Sánchez",
           fecha: new Date().toLocaleDateString(),
           hora: "10:45:00",
+          estado: "activo",
           ticketsConductores:[
             {
               nombre: "María Pérez",
@@ -98,19 +102,62 @@ export const estacionesDB = [
         gasolina: {
           disponible: false,
           litros: 0,
-          tiempoEspera: 5
+          tiempoPromedioCarga: 5
         },
         diesel: {
           disponible: false,
           litros: 0,
-          tiempoEspera: 8
+          tiempoPromedioCarga: 8
         },
         gnv: {
           disponible: true,
           litros: 50,
-          tiempoEspera: 8
+          tiempoPromedioCarga: 8
         }
       },
       ticketsCombustible: []
     }
   ];
+
+
+export const operariosDB = [
+  { 
+    id: 1, 
+    nombre: "Carlo Morales", 
+    usuario: "Cmorales", 
+    contraseña: "op1234"
+  },
+  { 
+    id: 2, 
+    nombre: "Luis Torres", 
+    usuario: "Ltorres", 
+    contraseña: "op5678" 
+  },
+  { 
+    id: 3, 
+    nombre: "Carla Ruiz", 
+    usuario: "Cruiz", 
+    contraseña: "op101" 
+  }
+];
+
+export const conductoresDB = [
+  { 
+    ci: "7654321",
+    nombre: "Carlos López",
+    contraseña: "cl1234",
+    ticketsHistorial: []
+  },
+  { 
+    ci: "5484555", 
+    nombre: "Sofía Herrera", 
+    contraseña: "sh1234",
+    ticketsHistorial: []
+  },
+  { 
+    ci: "5266789", 
+    nombre: "Javier Paredes", 
+    contraseña: "jp1234",
+    ticketsHistorial: []
+  }
+];

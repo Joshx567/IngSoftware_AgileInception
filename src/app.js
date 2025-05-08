@@ -76,7 +76,9 @@ export function generarTicket(nombreEstacion, cantidad, tipoCombustible, operari
     cantidadIngresada: cantidad,
     operario,
     fecha: new Date().toLocaleDateString(),
-    hora: horaTicket
+    hora: horaTicket,
+    estado: "activo",
+    ticketsConductores:[]
   };
   combustible.litros -= cantidad;
   estacion.ticketsCombustible.push(ticket);
