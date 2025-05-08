@@ -134,5 +134,22 @@
     },
     "coverage": 0,
     "test_count": 18
+  },
+  {
+    "sha": "e6e122dbc068ab0c447b087f29399b3d6ccd3f1a",
+    "author": "Mateo Gandarillas",
+    "commit": {
+      "date": "2025-05-08T20:51:41.000Z",
+      "message": "refact, feat: Elegir una estación de todas las disponibles  tanto para registrar litros como para tickets de atención para carga de combustible",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/e6e122dbc068ab0c447b087f29399b3d6ccd3f1a"
+    },
+    "stats": {
+      "total": 159,
+      "additions": 96,
+      "deletions": 63,
+      "date": "2025-05-08"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]

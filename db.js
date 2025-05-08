@@ -22,7 +22,7 @@ export const estacionesDB = [
           tiempoEspera: 8
         }
       },
-      tickets: []
+      ticketsCombustible: []
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ export const estacionesDB = [
           tiempoEspera: 3
         }
       },
-      tickets: [
+      ticketsCombustible: [
         {
           idTicket: 2,
           idEstacion: 2,
@@ -68,13 +68,29 @@ export const estacionesDB = [
           cantidadIngresada: 30,
           operario: "Luis Sánchez",
           fecha: new Date().toLocaleDateString(),
-          hora: "10:45:00"
+          hora: "10:45:00",
+          ticketsConductores:[
+            {
+              nombre: "María Pérez",
+              ci: "1234567",
+              placa: "XYZ-123",
+              monto: 20,
+              horaAtencion: "11:00:00"
+            },
+            {
+              nombre: "Carlos López",
+              ci: "7654321",
+              placa: "ABC-789",
+              monto: 10,
+              horaAtencion: "11:10:00"
+            }
+          ]
         }
       ]
     },
     {
       id: 3,
-      nombre: "Estación Principal",
+      nombre: "Estación Sur",
       ubicacion: "Av. Circunvalacion",
       horaApertura: "08:00",
       horaCierre: "13:00",
@@ -95,6 +111,6 @@ export const estacionesDB = [
           tiempoEspera: 8
         }
       },
-      tickets: []
+      ticketsCombustible: []
     }
   ];

@@ -1,10 +1,10 @@
-import {estacionesDB} from '../estaciones.js';
+import {estacionesDB} from '../db.js';
 export const historialTickets = [];
 
 export const historialIngresos = [];
 
-export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario) {
-  const estacion = estacionesDB.find(e => e.id === idEstacion);
+export function registrarLitros(nombreEstacion, cantidad, tipoCombustible, operario) {
+  const estacion = estacionesDB.find(e => e.nombre === nombreEstacion);
   if (!estacion){
     throw new Error("La estacion ingresada no existe");
   }
@@ -23,7 +23,8 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
     estacion.combustibles.gnv.disponible = true;
   } 
   historialIngresos.push({
-    idEstacion,
+    idEstacion: estacion.id,
+    nombreEstacion,
     tipoCombustible,
     cantidadIngresada,
     operario,
@@ -33,8 +34,8 @@ export function registrarLitros(idEstacion, cantidad, tipoCombustible, operario)
   return cantidadIngresada;
 }
 
-export function generarTicket(idEstacion, cantidad, tipoCombustible, operario, horaTicket) {
-  const estacion = estacionesDB.find(e => e.id === idEstacion);
+export function generarTicket(nombreEstacion, cantidad, tipoCombustible, operario, horaTicket) {
+  const estacion = estacionesDB.find(e => e.nombre === nombreEstacion);
   if (!estacion) {
     throw new Error("La estacion ingresada no existe");
   }
@@ -68,7 +69,7 @@ export function generarTicket(idEstacion, cantidad, tipoCombustible, operario, h
 
   const ticket = {
     idTicket,
-    idEstacion,
+    idEstacion: estacion.id,
     nombreEstacion: estacion.nombre,
     direccionEstacion: estacion.ubicacion,
     tipoCombustible,
@@ -78,7 +79,7 @@ export function generarTicket(idEstacion, cantidad, tipoCombustible, operario, h
     hora: horaTicket
   };
   combustible.litros -= cantidad;
-  estacion.tickets.push(ticket);
+  estacion.ticketsCombustible.push(ticket);
   historialTickets.push(ticket);
   return ticket;
 }

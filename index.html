@@ -84,7 +84,8 @@
             <p></p>
             <h2>Registrar litros</h2>
                 <form id="registrar-litros-form">
-                    <input id="estacion-id" type="number" placeholder="ID estación" required />
+                    <select id="select-nombre-estacion" required></select>
+
                     <select id="tipo-combustible" required>
                         <option value="">Selecciona tipo de combustible</option>
                         <option value="gasolina">Gasolina</option>
@@ -97,9 +98,9 @@
                 </form>
                 <div id="resultado-registrar"></div>
 
-            <h2>Generar ticket</h2>
+            <h2>Generar tickets de carga de combustible</h2>
                 <form id="generar-ticket-form">
-                    <input id="ticket-estacion-id" type="number" placeholder="ID estación" required />
+                    <select id="select-nombre-estacion-ticket" required></select>
                     <select id="ticket-tipo-combustible" required>
                         <option value="">Selecciona tipo de combustible</option>
                         <option value="gasolina">Gasolina</option>
@@ -119,7 +120,7 @@
                 <section>
                     <h2>Seleccionar Estación</h2>
                     <form id="ver-tickets-form">
-                    <label for="estacion-ticket-id">ID de la Estación:</label>
+                    <label for="estacion-ticket-id">Estación:</label>
                     <select id="estacion-ticket-id">
 
                     </select>
