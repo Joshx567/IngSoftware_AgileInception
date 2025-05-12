@@ -26,6 +26,7 @@ const ticketsEJEMPLO = [
 ];
 
 function cargarTicketsDesdeJSON() {
+    
     try {
         console.log('Tickets cargados:', ticketsEJEMPLO);
 
@@ -42,21 +43,6 @@ function cargarTicketsDesdeJSON() {
         console.error('Error al cargar tickets desde datos en línea:', error);
     }
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-    cargarTicketsDesdeJSON(); // o cargarTicketsDesdeStorage() si prefieres eso
-});
-
-function cargarTicketsDesdeStorage() {
-    const datosGuardados = localStorage.getItem('tickets');
-    if (datosGuardados) {
-        todosLosTickets = JSON.parse(datosGuardados);
-    }
-    mostrarTickets();
-}
-
-//window.addEventListener('DOMContentLoaded', cargarTicketsDesdeJSON);
-window.addEventListener('DOMContentLoaded', cargarTicketsDesdeStorage);
 
 function generarNumeroTicket() 
 {
@@ -162,7 +148,13 @@ function cancelarTicket() {
     mostrarTickets();
 }
 
+console.log('✅ generarTickets.js cargado correctamente');
+
+// EXPONERLA AL GLOBAL
+window.crearTicket = crearTicket;
+window.cancelarTicket = cancelarTicket;
 
 // Ejecutar al iniciar
 cargarTicketsDesdeJSON();
 guardarTicketsEnStorage();
+    

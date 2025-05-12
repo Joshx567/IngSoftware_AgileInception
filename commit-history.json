@@ -185,5 +185,56 @@
     },
     "coverage": 0,
     "test_count": 18
+  },
+  {
+    "sha": "f1c572b7457872fe3512e1391083c2c44c80c2a9",
+    "author": "Jose",
+    "commit": {
+      "date": "2025-05-12T00:35:15.000Z",
+      "message": "fix: Se corrigieron errores en la visualizacion y cancelado de tickeets 2",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/f1c572b7457872fe3512e1391083c2c44c80c2a9"
+    },
+    "stats": {
+      "total": 21,
+      "additions": 4,
+      "deletions": 17,
+      "date": "2025-05-12"
+    },
+    "coverage": 0,
+    "test_count": 18
+  },
+  {
+    "sha": "95203614f94350016fd8ce307683d77d1130ae80",
+    "author": "Jose",
+    "commit": {
+      "date": "2025-05-12T01:14:42.000Z",
+      "message": "fix: Se corrigieron errores en la visualizacion y cancelado de tickets 3",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/95203614f94350016fd8ce307683d77d1130ae80"
+    },
+    "stats": {
+      "total": 14,
+      "additions": 9,
+      "deletions": 5,
+      "date": "2025-05-12"
+    },
+    "coverage": 0,
+    "test_count": 18
+  },
+  {
+    "sha": "42df9f5bffad19fb8601aa632cd1957aac1ec591",
+    "author": "Jose",
+    "commit": {
+      "date": "2025-05-12T01:22:21.000Z",
+      "message": "fix: Se corrigieron errores en la visualizacion y cancelado de tickets 3",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/42df9f5bffad19fb8601aa632cd1957aac1ec591"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 2,
+      "deletions": 0,
+      "date": "2025-05-12"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]
