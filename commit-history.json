@@ -168,5 +168,22 @@
     },
     "coverage": 0,
     "test_count": 18
+  },
+  {
+    "sha": "a87ecd5d04ea4814e62b76dc446f1e967c47824a",
+    "author": "Jose",
+    "commit": {
+      "date": "2025-05-12T00:04:20.000Z",
+      "message": "fix: Se corrigieron errores en la visualizacion y cancelado de tickeets",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/a87ecd5d04ea4814e62b76dc446f1e967c47824a"
+    },
+    "stats": {
+      "total": 68,
+      "additions": 54,
+      "deletions": 14,
+      "date": "2025-05-12"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]

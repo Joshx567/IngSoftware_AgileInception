@@ -1,30 +1,65 @@
 let todosLosTickets = [];
 let usuarioActual = '';
 
-async function cargarTicketsDesdeJSON() {
-    try {
-        const response = await fetch('../tickets.json');
-        if (!response.ok) throw new Error('Error HTTP: ' + response.status);
-        const tickets = await response.json();
+const ticketsEJEMPLO = [
+    {
+        "nro": "12345",
+        "usuario": "Juampi",
+        "monto": 50.75,
+        "hora": "08:30",
+        "fecha": "2025-04-29"
+    },
+    {
+        "nro": "23456",
+        "usuario": "Mateo",
+        "monto": 30,
+        "hora": "10:15",
+        "fecha": "2025-04-28"
+    },
+    {
+        "nro": "34567",
+        "usuario": "Chango",
+        "monto": 70.25,
+        "hora": "14:00",
+        "fecha": "2025-04-27"
+    }
+];
 
-        console.log('Tickets cargados:', tickets);
+function cargarTicketsDesdeJSON() {
+    try {
+        console.log('Tickets cargados:', ticketsEJEMPLO);
 
         // Añadimos solo los tickets que no están ya en todosLosTickets
-        tickets.forEach(ticket => {
+        ticketsEJEMPLO.forEach(ticket => {
             if (!todosLosTickets.some(t => t.nro === ticket.nro)) {
                 todosLosTickets.push(ticket);
             }
         });
 
         mostrarTickets();
+        guardarTicketsEnStorage(); // Para que se conserven si recarga
     } catch (error) {
-        console.error('Error al cargar tickets:', error);
+        console.error('Error al cargar tickets desde datos en línea:', error);
     }
 }
 
-window.addEventListener('DOMContentLoaded', cargarTicketsDesdeJSON);
+window.addEventListener('DOMContentLoaded', () => {
+    cargarTicketsDesdeJSON(); // o cargarTicketsDesdeStorage() si prefieres eso
+});
 
-function generarNumeroTicket() {
+function cargarTicketsDesdeStorage() {
+    const datosGuardados = localStorage.getItem('tickets');
+    if (datosGuardados) {
+        todosLosTickets = JSON.parse(datosGuardados);
+    }
+    mostrarTickets();
+}
+
+//window.addEventListener('DOMContentLoaded', cargarTicketsDesdeJSON);
+window.addEventListener('DOMContentLoaded', cargarTicketsDesdeStorage);
+
+function generarNumeroTicket() 
+{
     return Math.floor(10000 + Math.random() * 90000).toString();
 }
 
@@ -52,6 +87,10 @@ function crearTicket() {
     mostrarTickets();
 }
 
+function guardarTicketsEnStorage() {
+    localStorage.setItem('tickets', JSON.stringify(todosLosTickets));
+}
+
 function mostrarTickets() {
     const mis = document.getElementById('lista-mis-tickets');
     const otros = document.getElementById('lista-otros-tickets');
@@ -75,6 +114,7 @@ function mostrarTickets() {
             div.className = 'ticket';
             div.innerHTML = `
                 <strong>Nro:</strong> ${ticket.nro}<br>
+                <strong>Usuario:</strong> ${ticket.usuario}<br>
                 <strong>Monto:</strong> Bs ${ticket.monto}<br>
                 <strong>Hora:</strong> ${ticket.hora}<br>
                 <strong>Fecha:</strong> ${ticket.fecha}
@@ -122,5 +162,7 @@ function cancelarTicket() {
     mostrarTickets();
 }
 
+
 // Ejecutar al iniciar
 cargarTicketsDesdeJSON();
+guardarTicketsEnStorage();
