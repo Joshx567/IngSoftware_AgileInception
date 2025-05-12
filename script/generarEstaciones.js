@@ -1,6 +1,7 @@
 let todasLasEstaciones = [];
 let filtroCombustible = '';
 let filtroEstacionId = '';
+
 async function cargarEstacionesDesdeJSON() {
     try {
         const response = await fetch('../estaciones.json');
