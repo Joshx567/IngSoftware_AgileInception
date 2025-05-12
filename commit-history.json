@@ -219,5 +219,22 @@
     },
     "coverage": 0,
     "test_count": 18
+  },
+  {
+    "sha": "42df9f5bffad19fb8601aa632cd1957aac1ec591",
+    "author": "Jose",
+    "commit": {
+      "date": "2025-05-12T01:22:21.000Z",
+      "message": "fix: Se corrigieron errores en la visualizacion y cancelado de tickets 3",
+      "url": "https://github.com/Joshx567/IngSoftware_AgileInception/commit/42df9f5bffad19fb8601aa632cd1957aac1ec591"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 2,
+      "deletions": 0,
+      "date": "2025-05-12"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]

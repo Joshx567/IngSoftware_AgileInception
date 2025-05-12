@@ -152,7 +152,9 @@ console.log('✅ generarTickets.js cargado correctamente');
 
 // EXPONERLA AL GLOBAL
 window.crearTicket = crearTicket;
+window.cancelarTicket = cancelarTicket;
 
 // Ejecutar al iniciar
 cargarTicketsDesdeJSON();
 guardarTicketsEnStorage();
+    
