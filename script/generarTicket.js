@@ -26,7 +26,7 @@ const ticketsEJEMPLO = [
 ];
 
 function cargarTicketsDesdeJSON() {
-    console.log('✅ generarTickets.js cargado correctamente');
+    
     try {
         console.log('Tickets cargados:', ticketsEJEMPLO);
 
@@ -148,6 +148,10 @@ function cancelarTicket() {
     mostrarTickets();
 }
 
+console.log('✅ generarTickets.js cargado correctamente');
+
+// EXPONERLA AL GLOBAL
+window.crearTicket = crearTicket;
 
 // Ejecutar al iniciar
 cargarTicketsDesdeJSON();
