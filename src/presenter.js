@@ -1,4 +1,5 @@
-import { registrarLitros,generarTicket} from "./app.js";
+import { registrarLitros, historialIngresos} from './registrarLitros.js';
+import { generarTicket, historialTickets} from './generarTicket.js';
 import { estacionesDB} from "../db.js";
 
 const registrarForm = document.querySelector("#registrar-litros-form");
