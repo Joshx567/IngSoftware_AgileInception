@@ -181,15 +181,16 @@ function mostrarEstacionesFiltradas() {
 
 function mostrarCombustibleFiltrado(estacion, tipoCombustible) {
     const comb = estacion.combustibles[tipoCombustible];
-    
-    // Si hay filtro de combustible y no es este tipo, no mostrar
+
+    // Si hay un filtro y no es este tipo, no mostrar nada
     if (filtroCombustible && filtroCombustible !== tipoCombustible) return '';
-    
+
+    // Mostrar solo si el combustible está disponible
     if (comb && comb.disponible) {
         return `<li>${tipoCombustible.toUpperCase()}: ✅ (${comb.litros || 'N/A'}L, ${comb.tiempoEspera || 'N/A'}min)</li>`;
-    } else if (!filtroCombustible) { // Solo mostrar no disponible si no hay filtro
-        return `<li>${tipoCombustible.toUpperCase()}: ❌ No disponible</li>`;
     }
+
+    // En cualquier otro caso (no disponible), no mostrar nada
     return '';
 }
 
