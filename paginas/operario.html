@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cero Cola - Operarios</title>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h1, h2, h3 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    form {
+        margin-bottom: 30px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+    }
+
+    form select,
+    form input,
+    form button {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    form button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    form button:hover {
+        background-color: #0056b3;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    table th, table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table th {
+        background-color: #f1f1f1;
+        font-weight: bold;
+    }
+
+    #resultado-registrar,
+    #resultado-ticket {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: #e7f4e4;
+        color: #155724;
+        font-weight: 500;
+    }
+
+    section {
+        margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+        form select,
+        form input,
+        form button {
+            font-size: 0.95rem;
+        }
+
+        .container {
+            padding: 20px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div style="padding: 20px;">
+        <h2>Operario de Estación</h2>
+
+        <h2>Registrar litros</h2>
+        <form id="registrar-litros-form">
+            <select id="select-nombre-estacion" required></select>
+
+            <select id="tipo-combustible" required>
+                <option value="">Selecciona tipo de combustible</option>
+                <option value="gasolina">Gasolina</option>
+                <option value="gnv">GNV</option>
+                <option value="diesel">Diésel</option>
+            </select>
+
+            <input id="cantidad-litros" type="number" placeholder="Litros" required />
+            <input id="usuario-operario" type="text" placeholder="Operario" required />
+            <button type="submit">Registrar</button>
+        </form>
+        <div id="resultado-registrar"></div>
+
+        <h2>Generar tickets de carga de combustible</h2>
+        <form id="generar-ticket-form">
+            <select id="select-nombre-estacion-ticket" required></select>
+
+            <select id="ticket-tipo-combustible" required>
+                <option value="">Selecciona tipo de combustible</option>
+                <option value="gasolina">Gasolina</option>
+                <option value="gnv">GNV</option>
+                <option value="diesel">Diésel</option>
+            </select>
+
+            <input id="ticket-cantidad" type="number" placeholder="Cantidad litros" required />
+            <input id="hora-ticket" type="text" placeholder="Hora (ej. 10:00)" required />
+            <input id="usuario-operario-t" type="text" placeholder="Operario" required />
+            <button type="submit">Generar Ticket</button>
+        </form>
+        <div id="resultado-ticket"></div>
+
+        <h1>Ver Tickets de Estación</h1>
+        <form id="ver-tickets-form">
+            <label for="estacion-ticket-id">Estación:</label>
+            <select id="estacion-ticket-id"></select>
+            <button type="submit">Ver Tickets</button>
+        </form>
+
+        <section id="resultado-tickets">
+            <h3>Tickets de la Estación Seleccionada</h3>
+            <table id="tabla-tickets"></table>
+        </section>
+
+        <section id="detalle-conductores" style="margin-top: 20px;">
+            <h3>Tickets de Conductores</h3>
+            <table id="tabla-conductores">
+                <thead>
+                    <tr>
+                        <th>CI</th>
+                        <th>Nombre</th>
+                        <th>Placa</th>
+                        <th>Monto Solicitado (Litros)</th>
+                        <th>Horario de Atención</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="../script/generarTicket.js" defer></script>
+    <script src="../script/generarEstaciones.js" defer></script>
+    <script type="module" src="../src/presenter.js" defer></script>
+</body>
+</html>  

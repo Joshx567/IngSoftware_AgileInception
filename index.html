@@ -1,161 +1,19 @@
 <!DOCTYPE html>
- <html lang="es">
- <head>
-     <meta charset="UTF-8">
-     <title>Cero Cola - App de gasolina</title>
-     <style>
-         body { font-family: Arial, sans-serif; }
-         #lista-tickets { margin-top: 20px; }
-         .ticket {
-             border: 1px solid #ccc;
-             padding: 10px;
-             margin-bottom: 10px;
-             border-radius: 5px;
-             background-color: #f9f9f9;
-         }
-     </style>
- </head>
- <body>
-    <div style="display: flex;">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Cero Cola</title>
+    <link rel="stylesheet" href="./styles/estilos01.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Cero Cola</h1>
+        <p>Ingresa como:</p>
 
-        <!-- Sección Conductores -->
-        <div style="flex: 1; padding: 20px;">
-            <h1>Conductor: </h1>
-
-            <h3>Sacar ticket</h3>
-            <label for="usuario">Nombre de usuario:</label><br>
-            <input type="text" id="usuario" placeholder="Ej: juan"><br><br>
-
-            <label for="monto">Monto de gasolina(en Bs):</label><br>
-            <input type="number" id="monto" placeholder="Ej: 50"><br><br>
-
-            <button onclick="crearTicket()">Reservar Turno</button>
-            <h1>Cancelar ticket</h1>
-            <button onclick="cancelarTicket()">Cancelar Mi Ticket</button> 
-            <h3>Mis tickets registrados</h3>
-            <div id="lista-mis-tickets">Cargando tickets...</div>
-
-            <h3>Otros tickets registrados</h3>
-            <div id="lista-otros-tickets">Cargando tickets...</div>
-
-            <div class="seccion-estaciones">
-                <h2>Estaciones de Servicio</h2>
-                
-                <!-- Sección de estaciones disponibles primero -->
-                <h3>Estaciones Disponibles</h3>
-                <div id="lista-estaciones-disponibles"></div>
-                
-                <!-- Sección de filtros después -->
-                <div class="seccion-filtros">
-                    <h3>Filtrar Estaciones</h3>
-
-                    <div style="margin-bottom: 15px;">
-                        <label for="selector-estaciones">Seleccione una estación:</label>
-                        <select id="selector-estaciones">
-                            <option value="">Todas las estaciones</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label for="selector-combustible">Filtrar por combustible:</label>
-                        <select id="selector-combustible">
-                            <option value="">Todos los combustibles</option>
-                            <option value="gasolina">Gasolina</option>
-                            <option value="diesel">Diésel</option>
-                            <option value="gnv">GNV</option>
-                        </select>
-                        <button onclick="aplicarFiltro()" style="margin-left: 10px; background-color: #2196F3;">
-                            Aplicar Filtro
-                        </button>
-                        <button onclick="limpiarFiltro()" style="margin-left: 10px; background-color: #9e9e9e;">
-                            Limpiar
-                        </button>
-                    </div>
-                </div>
-                
-                <div id="detalle-estacion"></div>
-            </div>
+        <div class="botones">
+            <a href="./paginas/conductor.html" class="boton">Conductor</a>
+            <a href="./paginas/operario.html" class="boton">Operario</a>
         </div>
-
-        <!-- Sección Operarios -->
-        <div style="flex: 1; padding: 20px; border-left: 1px solid black;">
-            <h2>Operario de Estación</h2>
-            <p></p>
-            <h2>Registrar litros</h2>
-                <form id="registrar-litros-form">
-                    <select id="select-nombre-estacion" required></select>
-
-                    <select id="tipo-combustible" required>
-                        <option value="">Selecciona tipo de combustible</option>
-                        <option value="gasolina">Gasolina</option>
-                        <option value="gnv">GNV</option>
-                        <option value="diesel">Diésel</option>
-                    </select>
-                    <input id="cantidad-litros" type="number" placeholder="Litros" required />
-                    <input id="usuario-operario" type="text" placeholder="Operario" required />
-                    <button type="submit">Registrar</button>
-                </form>
-                <div id="resultado-registrar"></div>
-
-            <h2>Generar tickets de carga de combustible</h2>
-                <form id="generar-ticket-form">
-                    <select id="select-nombre-estacion-ticket" required></select>
-                    <select id="ticket-tipo-combustible" required>
-                        <option value="">Selecciona tipo de combustible</option>
-                        <option value="gasolina">Gasolina</option>
-                        <option value="gnv">GNV</option>
-                        <option value="diesel">Diésel</option>
-                    </select>
-                    <input id="ticket-cantidad" type="number" placeholder="Cantidad litros" required />
-                    <input id="hora-ticket" type="text" placeholder="Hora (ej. 10:00)" required />
-                    <input id="usuario-operario-t" type="text" placeholder="Operario" required />
-                    <button type="submit">Generar Ticket</button>
-                </form>
-                <div id="resultado-ticket"></div>
-
-                <h1>Ver Tickets de Estación</h1>
-
-                <section>
-                    <h2>Seleccionar Estación</h2>
-                    <form id="ver-tickets-form">
-                    <label for="estacion-ticket-id">Estación:</label>
-                    <select id="estacion-ticket-id">
-
-                    </select>
-                    <button type="submit">Ver Tickets</button>
-                    </form>
-                </section>
-
-                <section id="resultado-tickets">
-                    <h3>Tickets de la Estación Seleccionada</h3>
-                    <table id="tabla-tickets">
-
-                    </table>
-                </section>
-                <section id="detalle-conductores" style="margin-top: 20px;">
-                    <h3>Tickets de Conductores</h3>
-                    <table id="tabla-conductores">
-                      <thead>
-                        <tr>
-                          <th>CI</th>
-                          <th>Nombre</th>
-                          <th>Placa</th>
-                          <th>Monto Solicitado (Litros)</th>
-                          <th>Horario de Atención</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        
-                      </tbody>
-                    </table>
-                  </section>
-                  
-            </div>
     </div>
-
-    <script src="script/generarTicket.js" defer></script>
-    <script src="script/generarEstaciones.js" defer></script> 
-    <script type="module" src="./src/presenter.js" defer></script>
-
 </body>
 </html>
