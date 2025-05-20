@@ -20,3 +20,6 @@ npm test
 
 Ejecutar pruebas de unidad solo una vez:
 npm run test-once
+
+Direccion de la pagina web deployada en netlify:
+https://cosmic-moonbeam-246d6f.netlify.app/
