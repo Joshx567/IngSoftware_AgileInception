@@ -99,16 +99,16 @@ function mostrarTickets(ticketsCombustible) {
   `;
   tablaTickets.appendChild(encabezado);
 
-  ticketsCombustible.forEach((ticketsCombustible, index) => {
+  ticketsCombustible.forEach((ticket, index) => {
     const fila = document.createElement("tr");
     fila.innerHTML = `
-      <td>${ticketsCombustible.idTicket}</td>
-      <td>${ticketsCombustible.tipoCombustible}</td>
-      <td>${ticketsCombustible.cantidadIngresada}</td>
-      <td>${ticketsCombustible.operario}</td>
-      <td>${ticketsCombustible.fecha}</td>
-      <td>${ticketsCombustible.hora}</td>
-      <td><button data-ticket-index="${index}" class="ver-conductores-btn">👥 Ver</button></td>
+      <td>${ticket.idTicket}</td>
+      <td>${ticket.tipoCombustible}</td>
+      <td>${ticket.cantidadIngresada}</td>
+      <td>${ticket.operario}</td>
+      <td>${ticket.fecha}</td>
+      <td>${ticket.hora}</td>
+      <td><button data-ticket-index="${index}" class="ver-conductores-btn"> 👥 Ver</button></td>
     `;
     tablaTickets.appendChild(fila);
   });
