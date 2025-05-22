@@ -20,14 +20,27 @@ h1 {
     margin-bottom: 10px;
     color: #333;
 }
+.img_estacion {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+    opacity: 0.4;
+}
 
 .botones {
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .boton {
     display: inline-block;
     margin: 10px;
+    flex-basis: 80%;
     padding: 12px 25px;
     background-color: #2196F3;
     color: white;
