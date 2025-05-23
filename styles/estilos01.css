@@ -16,10 +16,6 @@ body {
     text-align: center;
 }
 
-h1 {
-    margin-bottom: 10px;
-    color: #333;
-}
 .img_estacion {
     position: fixed; 
     top: 0;
