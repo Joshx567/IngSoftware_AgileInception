@@ -11,6 +11,20 @@ const resultadoTicket = document.querySelector("#resultado-ticket");
 const formularioVerTickets = document.querySelector("#ver-tickets-form");
 const tablaTickets = document.querySelector("#tabla-tickets");
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const map = L.map('map').setView([-17.3895, -66.1568], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  const lat = -17.393318;
+  const lon = -66.154874;
+  L.marker([lat, lon]).addTo(map)
+    .bindPopup('<b>Gasolinera El Cristo</b><br>Av. Heroínas esquina Lanza.')
+    .openPopup();
+});
+
 registrarForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const nombreEstacion = document.querySelector("#select-nombre-estacion").value;
@@ -160,4 +174,3 @@ document.querySelectorAll('.topnav a').forEach(link => {
         }
     });
 });
-

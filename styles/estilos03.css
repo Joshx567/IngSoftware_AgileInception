@@ -157,3 +157,7 @@ header {
     background-color: #c0392b; 
 }
 
+#map {
+  height: 500px;
+  width: 100%;
+}
