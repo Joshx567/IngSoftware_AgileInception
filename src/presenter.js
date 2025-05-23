@@ -77,6 +77,8 @@ formularioVerTickets.addEventListener("submit", (event) => {
 
   const estacionId = Number(document.querySelector("#estacion-ticket-id").value);
   const estacionSeleccionada = estacionesDB.find(estacion => estacion.id === estacionId);
+  const detalleConductores = document.getElementById("detalle-conductores");
+  detalleConductores.style.display = "none";
 
   if (estacionSeleccionada && estacionSeleccionada.ticketsCombustible.length > 0) {
     mostrarTickets(estacionSeleccionada.ticketsCombustible);
@@ -124,8 +126,9 @@ function mostrarTickets(ticketsCombustible) {
 
 function mostrarConductores(ticketsCombustible) {
   const tablaConductores = document.querySelector("#tabla-conductores tbody");
+  const detalleConductores = document.getElementById("detalle-conductores");
   tablaConductores.innerHTML = "";
-
+  detalleConductores.style.display = "block";
   if (!ticketsCombustible.ticketsConductores || ticketsCombustible.ticketsConductores.length === 0) {
     tablaConductores.innerHTML = "<tr><td colspan='5'>Este ticket no tiene conductores registrados.</td></tr>";
     return;
@@ -143,3 +146,18 @@ function mostrarConductores(ticketsCombustible) {
     tablaConductores.appendChild(fila);
   });
 }
+
+document.querySelectorAll('.topnav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('section[id^="section-"]').forEach(sec => {
+            sec.style.display = 'none';
+        });
+        const target = this.getAttribute('data-target');
+        const sectionToShow = document.getElementById('section-' + target);
+        if (sectionToShow) {
+            sectionToShow.style.display = 'block';
+        }
+    });
+});
+

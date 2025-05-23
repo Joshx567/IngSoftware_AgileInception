@@ -6,76 +6,87 @@
     <link rel="stylesheet" href="../styles/estilos02.css">
 </head>
 <body>
-    <nav>
+    <header>
+        <div class="logo">
+            <img src="../styles/img/logo.png" alt="Logo" class="logo_cero">
+        </div>
         <nav class="topnav">
-        <a href="operario.html">A</a>
-        <a href="operario.html">A</a>
-        <a href="operario.html">A</a>
-    </nav>
+            <a href="#" data-target="registrar-litros">Registrar Litros</a>
+            <a href="#" data-target="generar-ticket">Generar Tickets</a>
+            <a href="#" data-target="ver-tickets">Ver Tickets</a>
+        </nav>
+        <a href="../index.html" class="cerrar-sesion">Cerrar Sesión</a>
+    </header>
+
     <div style="padding: 20px;">
-        <h2>Operario de Estación</h2>
 
-        <h2>Registrar litros</h2>
-        <form id="registrar-litros-form">
-            <select id="select-nombre-estacion" required></select>
+        <section id="section-registrar-litros">
+            <h2>Registrar litros</h2>
+            <form id="registrar-litros-form">
+                <select id="select-nombre-estacion" required></select>
 
-            <select id="tipo-combustible" required>
-                <option value="">Selecciona tipo de combustible</option>
-                <option value="gasolina">Gasolina</option>
-                <option value="gnv">GNV</option>
-                <option value="diesel">Diésel</option>
-            </select>
+                <select id="tipo-combustible" required>
+                    <option value="">Selecciona tipo de combustible</option>
+                    <option value="gasolina">Gasolina</option>
+                    <option value="gnv">GNV</option>
+                    <option value="diesel">Diésel</option>
+                </select>
 
-            <input id="cantidad-litros" type="number" placeholder="Litros" required />
-            <input id="usuario-operario" type="text" placeholder="Operario" required />
-            <button type="submit">Registrar</button>
-        </form>
-        <div id="resultado-registrar"></div>
-
-        <h2>Generar tickets de carga de combustible</h2>
-        <form id="generar-ticket-form">
-            <select id="select-nombre-estacion-ticket" required></select>
-
-            <select id="ticket-tipo-combustible" required>
-                <option value="">Selecciona tipo de combustible</option>
-                <option value="gasolina">Gasolina</option>
-                <option value="gnv">GNV</option>
-                <option value="diesel">Diésel</option>
-            </select>
-
-            <input id="ticket-cantidad" type="number" placeholder="Cantidad litros" required />
-            <input id="hora-ticket" type="text" placeholder="Hora (ej. 10:00)" required />
-            <input id="usuario-operario-t" type="text" placeholder="Operario" required />
-            <button type="submit">Generar Ticket</button>
-        </form>
-        <div id="resultado-ticket"></div>
-
-        <h1>Ver Tickets de Estación</h1>
-        <form id="ver-tickets-form">
-            <label for="estacion-ticket-id">Estación:</label>
-            <select id="estacion-ticket-id"></select>
-            <button type="submit">Ver Tickets</button>
-        </form>
-
-        <section id="resultado-tickets">
-            <h3>Tickets de la Estación Seleccionada</h3>
-            <table id="tabla-tickets"></table>
+                <input id="cantidad-litros" type="number" placeholder="Litros" required />
+                <input id="usuario-operario" type="text" placeholder="Operario" required />
+                <button type="submit">Registrar</button>
+            </form>
+            <div id="resultado-registrar"></div>
         </section>
 
-        <section id="detalle-conductores" style="margin-top: 20px;">
-            <h3>Tickets de Conductores</h3>
-            <table id="tabla-conductores">
-                <thead>
-                    <tr>
-                        <th>CI</th>
-                        <th>Nombre</th>
-                        <th>Placa</th>
-                        <th>Monto Solicitado (Litros)</th>
-                        <th>Horario de Atención</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+        <section id="section-generar-ticket" style="display: none;">
+            <h2>Generar tickets de carga de combustible</h2>
+            <form id="generar-ticket-form">
+                <select id="select-nombre-estacion-ticket" required></select>
+
+                <select id="ticket-tipo-combustible" required>
+                    <option value="">Selecciona tipo de combustible</option>
+                    <option value="gasolina">Gasolina</option>
+                    <option value="gnv">GNV</option>
+                    <option value="diesel">Diésel</option>
+                </select>
+
+                <input id="ticket-cantidad" type="number" placeholder="Cantidad litros" required />
+                <input id="hora-ticket" type="text" placeholder="Hora (ej. 10:00)" required />
+                <input id="usuario-operario-t" type="text" placeholder="Operario" required />
+                <button type="submit">Generar Ticket</button>
+            </form>
+            <div id="resultado-ticket"></div>
+        </section>
+
+        <section id="section-ver-tickets" style="display: none;">
+            <h2>Ver Tickets de Estación</h2>
+            <form id="ver-tickets-form">
+                <label for="estacion-ticket-id">Estación:</label>
+                <select id="estacion-ticket-id"></select>
+                <button type="submit">Ver Tickets</button>
+            </form>
+
+            <section id="resultado-tickets">
+                <h3>Tickets de la Estación Seleccionada</h3>
+                <table id="tabla-tickets"></table>
+            </section>
+
+            <section id="detalle-conductores" style="display: none;">
+                <h3>Tickets de Conductores</h3>
+                <table id="tabla-conductores">
+                    <thead>
+                        <tr>
+                            <th>CI</th>
+                            <th>Nombre</th>
+                            <th>Placa</th>
+                            <th>Monto Solicitado (Litros)</th>
+                            <th>Horario de Atención</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
         </section>
     </div>
 
