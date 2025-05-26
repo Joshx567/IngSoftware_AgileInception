@@ -2,6 +2,7 @@ import { registrarLitros, historialIngresos} from './registrarLitros.js';
 import { generarTicket, historialTickets} from './generarTicket.js';
 import { estacionesDB} from "../db.js";
 
+const usuario = 'Carlos López';
 const registrarForm = document.querySelector("#registrar-litros-form");
 const resultadoRegistrar = document.querySelector("#resultado-registrar");
 
@@ -30,8 +31,8 @@ document.querySelectorAll('.topnav_2 a').forEach(link => {
     });
 });
 function mostrarEstaciones(estaciones) {
-  listaEstacionesDiv.innerHTML = ''; // Limpia lista principal
-  detalleEstacionDiv = null; // Variable global para referencia al detalle visible
+  listaEstacionesDiv.innerHTML = ''; 
+  detalleEstacionDiv = null; 
 
   estaciones.forEach(est => {
     const div = document.createElement('div');
@@ -47,7 +48,6 @@ function mostrarEstaciones(estaciones) {
       <button data-id="${est.id}">Ver detalles</button>
     `;
 
-    // Contenedor para los detalles, oculto inicialmente
     const detalleDiv = document.createElement('div');
     detalleDiv.style.display = 'none';
     detalleDiv.style.padding = '10px';
@@ -56,17 +56,14 @@ function mostrarEstaciones(estaciones) {
     div.appendChild(detalleDiv);
 
     div.querySelector('button').addEventListener('click', () => {
-      // Si ya hay un detalle visible, lo ocultamos
       if (window.detalleEstacionDiv && window.detalleEstacionDiv !== detalleDiv) {
         window.detalleEstacionDiv.style.display = 'none';
       }
 
-      // Toggle visibilidad actual
       const estaVisible = detalleDiv.style.display === 'block';
       detalleDiv.style.display = estaVisible ? 'none' : 'block';
 
       if (!estaVisible) {
-        // Rellenamos detalles solo si se va a mostrar
         mostrarDetalleEstacion(est, detalleDiv);
         window.detalleEstacionDiv = detalleDiv;
       }
