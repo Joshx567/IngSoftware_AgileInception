@@ -1,5 +1,5 @@
 import {estacionesDB} from "../db.js";
 
-export function sacarTicket() {
-    return 0;
+export function sacarTicket(monto) {
+    return monto;
 }
