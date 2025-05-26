@@ -30,6 +30,53 @@ document.querySelectorAll('.topnav_2 a').forEach(link => {
     });
 });
 function mostrarEstaciones(estaciones) {
+  listaEstacionesDiv.innerHTML = ''; // Limpia lista principal
+  detalleEstacionDiv = null; // Variable global para referencia al detalle visible
+
+  estaciones.forEach(est => {
+    const div = document.createElement('div');
+    div.classList.add('item-estacion');
+    div.style.border = '1px solid #ccc';
+    div.style.marginBottom = '10px';
+    div.style.padding = '8px';
+
+    div.innerHTML = `
+      <h4>${est.nombre}</h4>
+      <p><strong>Ubicación:</strong> ${est.ubicacion}</p>
+      <p><strong>Horario:</strong> ${est.horaApertura} - ${est.horaCierre}</p>
+      <button data-id="${est.id}">Ver detalles</button>
+    `;
+
+    // Contenedor para los detalles, oculto inicialmente
+    const detalleDiv = document.createElement('div');
+    detalleDiv.style.display = 'none';
+    detalleDiv.style.padding = '10px';
+    detalleDiv.style.borderTop = '1px dashed #999';
+
+    div.appendChild(detalleDiv);
+
+    div.querySelector('button').addEventListener('click', () => {
+      // Si ya hay un detalle visible, lo ocultamos
+      if (window.detalleEstacionDiv && window.detalleEstacionDiv !== detalleDiv) {
+        window.detalleEstacionDiv.style.display = 'none';
+      }
+
+      // Toggle visibilidad actual
+      const estaVisible = detalleDiv.style.display === 'block';
+      detalleDiv.style.display = estaVisible ? 'none' : 'block';
+
+      if (!estaVisible) {
+        // Rellenamos detalles solo si se va a mostrar
+        mostrarDetalleEstacion(est, detalleDiv);
+        window.detalleEstacionDiv = detalleDiv;
+      }
+    });
+
+    listaEstacionesDiv.appendChild(div);
+  });
+}
+
+function mostrarEstaciones(estaciones) {
   listaEstacionesDiv.innerHTML = '';
 
   estaciones.forEach(est => {
@@ -64,7 +111,7 @@ function mostrarDetalleEstacion(est) {
           <strong>${tipo.toUpperCase()}</strong>: 
           ${c.disponible ? '<span style="color:green">Disponible</span>' : '<span style="color:red">No disponible</span>'}, 
           ${c.litros} litros, 
-          Tiempo carga: ${c.tiempoPromedioCarga} min
+          Tiempo carga promedio: ${c.tiempoPromedioCarga} min
         </li>
       `).join('')}
     </ul>
