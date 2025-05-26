@@ -11,8 +11,102 @@ const resultadoTicket = document.querySelector("#resultado-ticket");
 const formularioVerTickets = document.querySelector("#ver-tickets-form");
 const tablaTickets = document.querySelector("#tabla-tickets");
 
+const listaEstacionesDiv = document.getElementById('lista-estaciones-disponibles');
+const selectorEstaciones = document.getElementById('selector-estaciones');
+const selectorCombustible = document.getElementById('selector-combustible');
+const detalleEstacionDiv = document.getElementById('detalle-estacion');
+
+function mostrarEstaciones(estaciones) {
+  listaEstacionesDiv.innerHTML = '';
+
+  estaciones.forEach(est => {
+    const div = document.createElement('div');
+    div.classList.add('item-estacion');
+    div.style.border = '1px solid #ccc';
+    div.style.marginBottom = '10px';
+    div.style.padding = '8px';
+
+    div.innerHTML = `
+      <h4>${est.nombre}</h4>
+      <p><strong>Ubicación:</strong> ${est.ubicacion}</p>
+      <p><strong>Horario:</strong> ${est.horaApertura} - ${est.horaCierre}</p>
+      <button data-id="${est.id}">Ver detalles</button>
+    `;
+
+    div.querySelector('button').addEventListener('click', () => mostrarDetalleEstacion(est));
+    listaEstacionesDiv.appendChild(div);
+  });
+}
+
+
+function mostrarDetalleEstacion(est) {
+  detalleEstacionDiv.innerHTML = `
+    <h3>${est.nombre}</h3>
+    <p><strong>Ubicación:</strong> ${est.ubicacion}</p>
+    <p><strong>Horario:</strong> ${est.horaApertura} - ${est.horaCierre}</p>
+    <h4>Combustibles:</h4>
+    <ul>
+      ${Object.entries(est.combustibles).map(([tipo, c]) => `
+        <li>
+          <strong>${tipo.toUpperCase()}</strong>: 
+          ${c.disponible ? '<span style="color:green">Disponible</span>' : '<span style="color:red">No disponible</span>'}, 
+          ${c.litros} litros, 
+          Tiempo carga: ${c.tiempoPromedioCarga} min
+        </li>
+      `).join('')}
+    </ul>
+
+    <h4>Tickets de Combustible:</h4>
+    <ul>
+      ${est.ticketsCombustible.length === 0 ? '<li>No hay tickets</li>' :
+        est.ticketsCombustible.map(t => `
+          <li>
+            <strong>${t.tipoCombustible.toUpperCase()}</strong> - ${t.cantidadIngresada}L,
+            Hora: ${t.hora},
+            Fecha: ${t.fecha}
+          </li>
+        `).join('')}
+    </ul>
+  `;
+}
+
+function cargarSelectores(estaciones) {
+  selectorEstaciones.innerHTML = `<option value="">Todas las estaciones</option>`;
+  estaciones.forEach(est => {
+    selectorEstaciones.innerHTML += `<option value="${est.id}">${est.nombre}</option>`;
+  });
+}
+
+function aplicarFiltro() {
+  const idEstacion = selectorEstaciones.value;
+  const tipoCombustible = selectorCombustible.value;
+
+  let resultado = [...estacionesDB];
+
+  if (idEstacion) {
+    resultado = resultado.filter(e => e.id == idEstacion);
+  }
+
+  if (tipoCombustible) {
+    resultado = resultado.filter(e => e.combustibles[tipoCombustible]?.disponible);
+  }
+
+  mostrarEstaciones(resultado);
+}
+
+function limpiarFiltros() {
+  selectorEstaciones.value = '';
+  selectorCombustible.value = '';
+  mostrarEstaciones(estacionesDB);
+  detalleEstacionDiv.innerHTML = '';
+}
 
 document.addEventListener("DOMContentLoaded", function () {
+  mostrarEstaciones(estacionesDB);
+  cargarSelectores(estacionesDB);
+
+  document.querySelector('.filter-controls button').addEventListener('click', aplicarFiltro);
+  document.querySelector('.filter-controls .secondary-btn').addEventListener('click', limpiarFiltros);
   const map = L.map('map').setView([-17.3895, -66.1568], 13);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
@@ -21,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const lat = -17.393318;
   const lon = -66.154874;
   L.marker([lat, lon]).addTo(map)
-    .bindPopup('<b>Gasolinera El Cristo</b><br>Av. Heroínas esquina Lanza.')
+    .bindPopup('<b>Estacuón Principal</b><br>Av. Heroínas esquina Lanza.')
     .openPopup();
 });
 
@@ -174,3 +268,4 @@ document.querySelectorAll('.topnav a').forEach(link => {
         }
     });
 });
+
