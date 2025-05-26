@@ -23,14 +23,10 @@
         </nav>
         <a href="../index.html" class="cerrar-sesion">Cerrar Sesión</a>
     </header>
-
-    <h2>Mapa de Cochabamba</h2>
-    <div id="map"></div>
-
     
     <div class="container">
 
-        <section id="section-sacar-ticket" style="display: none;">
+        <section id="section-sacar-ticket">
             <h2>Sacar ticket</h2>
             <label for="usuario">Nombre de usuario:</label>
             <input type="text" id="usuario" placeholder="Ej: juan">
@@ -55,35 +51,33 @@
         <section id="section-estaciones" style="display: none;">
             <h2>Estaciones de Servicio</h2>
 
+            <label for="selector-combustible">Filtrar por combustible:</label>
+            <select id="selector-combustible">
+                <option value="">Todos los combustibles</option>
+                <option value="gasolina">Gasolina</option>
+                <option value="diesel">Diésel</option>
+                <option value="gnv">GNV</option>
+            </select>
+            
+            <div class="filter-controls">
+                <button onclick="">Aplicar Filtro</button>
+                <button onclick="" class="secondary-btn">Limpiar</button>
+            </div>
             <div id="lista-estaciones-disponibles"></div>
+            <div id="detalle-estacion"></div>
 
             <div class="seccion-filtros">
-                <h3>Filtrar Estaciones</h3>
 
-                <label for="selector-estaciones">Seleccione una estación:</label>
-                <select id="selector-estaciones">
-                        <option value="">Todas las estaciones</option>
+                <select id="selector-estaciones" style="display: none;">
                 </select>
-            </div>
-            
-                <label for="selector-combustible">Filtrar por combustible:</label>
-                <select id="selector-combustible">
-                    <option value="">Todos los combustibles</option>
-                    <option value="gasolina">Gasolina</option>
-                    <option value="diesel">Diésel</option>
-                    <option value="gnv">GNV</option>
-                </select>
-
-                <div class="filter-controls">
-                    <button onclick="">Aplicar Filtro</button>
-                    <button onclick="" class="secondary-btn">Limpiar</button>
-                </div>
-            </div>
-
-            <div id="detalle-estacion"></div>
+            </div>      
         </section>
-        
     </div>
+        
+    
+
+    <h2>Mapa de Cochabamba</h2>
+    <div id="map"></div>
 
     <script src="../script/generarTicket.js" defer></script>
     <script type="module" src="../src/presenter.js" defer></script>
