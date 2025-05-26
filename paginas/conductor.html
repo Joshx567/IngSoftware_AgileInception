@@ -16,10 +16,10 @@
         <div class="logo">
             <img src="../styles/img/logo.png" alt="Logo" class="logo_cero">
         </div>
-        <nav class="topnav">
-            <a href="operario.html">Estación</a>
-            <a href="operario.html">Tickets</a>
-            <a href="operario.html">Conductores</a>
+        <nav class="topnav_2">
+            <a href="#" data-target="sacar-ticket">Sacar ticket</a>
+            <a href="#" data-target="mis-tickets">Mis Tickets</a>
+            <a href="#" data-target="estaciones">Ver estaciones</a>
         </nav>
         <a href="../index.html" class="cerrar-sesion">Cerrar Sesión</a>
     </header>
@@ -29,30 +29,32 @@
 
     
     <div class="container">
-        <h1>Conductor</h1>
 
-        <h3>Sacar ticket</h3>
-        <label for="usuario">Nombre de usuario:</label>
-        <input type="text" id="usuario" placeholder="Ej: juan">
+        <section id="section-sacar-ticket" style="display: none;">
+            <h2>Sacar ticket</h2>
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" id="usuario" placeholder="Ej: juan">
 
-        <label for="monto">Monto de gasolina (en Bs):</label>
-        <input type="number" id="monto" placeholder="Ej: 50">
+            <label for="monto">Monto de gasolina (en Bs):</label>
+            <input type="number" id="monto" placeholder="Ej: 50">
 
-        <button onclick="crearTicket()">Reservar Turno</button>
+            <button onclick="crearTicket()">Reservar Turno</button>
 
-        <h1>Cancelar ticket</h1>
-        <button onclick="cancelarTicket()" class="secondary-btn">Cancelar Mi Ticket</button>
+            <h2>Cancelar ticket</h2>
+            <button onclick="cancelarTicket()" class="secondary-btn">Cancelar Mi Ticket</button>
+        </section>
 
-        <h3>Mis tickets registrados</h3>
-        <div id="lista-mis-tickets">Cargando tickets...</div>
+        <section id="section-mis-tickets" style="display: none;">
+            <h2>Mis tickets registrados</h2>
+            <div id="lista-mis-tickets">Cargando tickets...</div>
 
-        <h3>Otros tickets registrados</h3>
-        <div id="lista-otros-tickets">Cargando tickets...</div>
+            <h3>Otros tickets registrados</h3>
+            <div id="lista-otros-tickets">Cargando tickets...</div>
+        </section>
 
-        <div class="seccion-estaciones">
+        <section id="section-estaciones" style="display: none;">
             <h2>Estaciones de Servicio</h2>
 
-            <h3>Estaciones Disponibles</h3>
             <div id="lista-estaciones-disponibles"></div>
 
             <div class="seccion-filtros">
@@ -60,9 +62,10 @@
 
                 <label for="selector-estaciones">Seleccione una estación:</label>
                 <select id="selector-estaciones">
-                    <option value="">Todas las estaciones</option>
+                        <option value="">Todas las estaciones</option>
                 </select>
-
+            </div>
+            
                 <label for="selector-combustible">Filtrar por combustible:</label>
                 <select id="selector-combustible">
                     <option value="">Todos los combustibles</option>
@@ -78,7 +81,8 @@
             </div>
 
             <div id="detalle-estacion"></div>
-        </div>
+        </section>
+        
     </div>
 
     <script src="../script/generarTicket.js" defer></script>

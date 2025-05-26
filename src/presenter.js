@@ -16,6 +16,19 @@ const selectorEstaciones = document.getElementById('selector-estaciones');
 const selectorCombustible = document.getElementById('selector-combustible');
 const detalleEstacionDiv = document.getElementById('detalle-estacion');
 
+document.querySelectorAll('.topnav_2 a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('section[id^="section-"]').forEach(sec => {
+            sec.style.display = 'none';
+        });
+        const target = this.getAttribute('data-target');
+        const sectionToShow = document.getElementById('section-' + target);
+        if (sectionToShow) {
+            sectionToShow.style.display = 'block';
+        }
+    });
+});
 function mostrarEstaciones(estaciones) {
   listaEstacionesDiv.innerHTML = '';
 
