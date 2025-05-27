@@ -144,7 +144,7 @@ export const operariosDB = [
 export const conductoresDB = [
   { 
     ci: "7654321",
-    nombre: "Carlos López",
+    nombre: "Carlos",
     contraseña: "cl1234",
     ticketsHistorial: []
   },
