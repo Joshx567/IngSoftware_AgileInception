@@ -9,7 +9,7 @@ describe("Generar tickets de combustible", () => {
     const ticket = generarTicket("Estación Principal", 30,"gnv","Carlos","10:00"); 
     expect(ticket).toHaveProperty("idTicket");
     expect(ticket).toHaveProperty("nombreEstacion","Estación Principal");
-    expect(ticket).toHaveProperty("direccionEstacion","Av. Libertador");
+    expect(ticket).toHaveProperty("direccionEstacion","Av. Heroínas, Esq. Lanza");
     expect(ticket).toHaveProperty("tipoCombustible","gnv");
     expect(ticket).toHaveProperty("cantidadIngresada", 30);
     console.log(ticket)
