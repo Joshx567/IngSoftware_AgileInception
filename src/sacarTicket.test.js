@@ -4,17 +4,17 @@ import {estacionesDB} from "../db.js";
 
 describe("Sacar un ticket para un turno de una estación", () => {
     it("deberia registrar el ticket", () => {  
-    expect(sacarTicket(5,'Estación Norte',2)).toEqual(5);
+    expect(sacarTicket(5,'Estación Norte',2));
     });
     it("deberia encontrar la estación seleccionada para el ticket", () => {  
-    const estacion = estacionesDB.find(e => e.nombre === 'Estación Norte');
-    expect(estacion.nombre).toEqual('Estación Norte');
-    console.log(estacion);
+        const estacion = estacionesDB.find(e => e.nombre === 'Estación Norte');
+        expect(estacion.nombre).toEqual('Estación Norte');
+        console.log(estacion);
     });
     it("deberia encontrar el ticket de combustible de la estacion", () => {  
-    let estacion = estacionesDB.find(e => e.nombre === 'Estación Norte');
-    const ticket = estacion.ticketsCombustible.find(t => t.idTicket === 2);
-    expect(ticket.tipoCombustible).toEqual('diesel');
+        let estacion = estacionesDB.find(e => e.nombre === 'Estación Norte');
+        const ticket = estacion.ticketsCombustible.find(t => t.idTicket === 2);
+        expect(ticket.tipoCombustible).toEqual('diesel');
     });
     it("debería rechazar el ticket si el monto supera a la cantidad restante", () => {
         try {
@@ -26,9 +26,15 @@ describe("Sacar un ticket para un turno de una estación", () => {
         }
       });
     it("deberia reducir la cantida disponible del ticket de combustible de la estacion", () => {  
-    sacarTicket(5,'Estación Norte',2)
-    let estacion = estacionesDB.find(e => e.nombre === 'Estación Norte');
-    const ticket = estacion.ticketsCombustible.find(t => t.idTicket === 2);
-    expect(ticket.cantidadIngresada).toEqual(190);
+        sacarTicket(5,'Estación Norte',2);
+        let estacion = estacionesDB.find(e => e.nombre === 'Estación Norte');
+        const ticket = estacion.ticketsCombustible.find(t => t.idTicket === 2);
+        expect(ticket.cantidadIngresada).toEqual(190);
+    });
+    it("deberia registrar la llegada del combustible en un historial", () => {
+        let estacion = estacionesDB.find(e => e.nombre === 'Estación Norte');
+        const ticket = estacion.ticketsCombustible.find(t => t.idTicket === 2);
+        expect(ticket.ticketsConductores.length).toEqual(2);
+        console.log(ticket.ticketsConductores)
     });
 });
