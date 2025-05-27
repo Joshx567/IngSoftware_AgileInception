@@ -26,27 +26,43 @@
     
     <div class="container">
 
-        <section id="section-sacar-ticket">
-            <h2>Sacar ticket</h2>
-            <label for="usuario">Nombre de usuario:</label>
-            <input type="text" id="usuario" placeholder="Ej: juan">
+       <section id="section-sacar-ticket">
+            <h2>Sacar Ticket</h2>
 
-            <label for="monto">Monto de gasolina (en Bs):</label>
-            <input type="number" id="monto" placeholder="Ej: 50">
+            <label for="input-username">Nombre:</label>
+            <input type="text" id="input-username" value="Carlos" disabled>
 
-            <button onclick="crearTicket()">Reservar Turno</button>
+            <label for="select-station">Seleccionar estacion:</label>
+            <select id="select-station"></select>
 
-            <h2>Cancelar ticket</h2>
-            <button onclick="cancelarTicket()" class="secondary-btn">Cancelar Mi Ticket</button>
+            <label for="select-fuel-ticket">Seleccionar Ticket:</label>
+            <select id="select-fuel-ticket"></select>
+
+            <label for="input-amount">Cantidad cargar:</label>
+            <input type="number" id="input-amount" placeholder="e.g. 50">
+
+            <label for="input-license-plate">Placa del vehículo:</label>
+            <input type="text" id="input-license-plate" placeholder="e.g. 505GGG">
+
+            <label for="input-id-card">Carnet:</label>
+            <input type="number" id="input-id-card" placeholder="e.g. 77896516">
+
+            <button id="btn-get-ticket">SACAR TICKET</button>
         </section>
 
         <section id="section-mis-tickets" style="display: none;">
-            <h2>Mis tickets registrados</h2>
-            <div id="lista-mis-tickets">Cargando tickets...</div>
+            <h2>Mis Tickets</h2>
 
-            <h3>Otros tickets registrados</h3>
-            <div id="lista-otros-tickets">Cargando tickets...</div>
+            <div id="my-latest-ticket">
+
+            </div>
+            <button id="btn-cancel-latest-ticket">Cancelar ticket</button>
+
+            <h3>Mis Tickets Pasados</h3>
+            <div id="all-other-tickets">Cargando tickets...</div>
         </section>
+
+
 
         <section id="section-estaciones" style="display: none;">
             <h2>Estaciones de Servicio</h2>
@@ -79,7 +95,6 @@
     <h2>Mapa de Cochabamba</h2>
     <div id="map"></div>
 
-    <script src="../script/generarTicket.js" defer></script>
     <script type="module" src="../src/presenter.js" defer></script>
 </body>
 </html>
