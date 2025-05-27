@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Cero Cola - Conductores</title>
     <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <link rel="stylesheet" href="../styles/estilos03.css">
+    <link rel="stylesheet" href="../styles/estilos03.css" />
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="../styles/img/logo.png" alt="Logo" class="logo_cero">
+            <img src="../styles/img/logo.png" alt="Logo" class="logo_cero" />
         </div>
         <nav class="topnav_2">
             <a href="#" data-target="sacar-ticket">Sacar ticket</a>
@@ -25,43 +23,40 @@
     </header>
     
     <div class="container">
-
        <section id="section-sacar-ticket">
             <h2>Sacar Ticket</h2>
 
             <label for="input-username">Nombre:</label>
-            <input type="text" id="input-username" value="Carlos" disabled>
+            <input type="text" id="input-username" value="Carlos" disabled />
 
-            <label for="select-station">Seleccionar estacion:</label>
+            <label for="select-station">Seleccionar estación:</label>
             <select id="select-station"></select>
 
             <label for="select-fuel-ticket">Seleccionar Ticket:</label>
             <select id="select-fuel-ticket"></select>
 
-            <label for="input-amount">Cantidad cargar:</label>
-            <input type="number" id="input-amount" placeholder="e.g. 50">
+            <label for="input-amount">Cantidad a cargar (litros):</label>
+            <input type="number" id="input-amount" placeholder="e.g. 50" min="0" />
 
             <label for="input-license-plate">Placa del vehículo:</label>
-            <input type="text" id="input-license-plate" placeholder="e.g. 505GGG">
+            <input type="text" id="input-license-plate" placeholder="e.g. 505GGG" />
 
             <label for="input-id-card">Carnet:</label>
-            <input type="number" id="input-id-card" placeholder="e.g. 77896516">
+            <input type="number" id="input-id-card" placeholder="e.g. 77896516" />
 
             <button id="btn-get-ticket">SACAR TICKET</button>
         </section>
 
+
         <section id="section-mis-tickets" style="display: none;">
             <h2>Mis Tickets</h2>
 
-            <div id="my-latest-ticket">
-
-            </div>
+            <div id="my-latest-ticket"></div>
             <button id="btn-cancel-latest-ticket">Cancelar ticket</button>
 
             <h3>Mis Tickets Pasados</h3>
             <div id="all-other-tickets">Cargando tickets...</div>
         </section>
-
 
 
         <section id="section-estaciones" style="display: none;">
@@ -76,12 +71,11 @@
             </select>
             
             <div class="filter-controls">
-                <button onclick="">Aplicar Filtro</button>
-                <button onclick="" class="secondary-btn">Limpiar</button>
+                <button id="btn-aplicar-filtro">Aplicar Filtro</button>
+                <button id="btn-limpiar-filtro" class="secondary-btn">Limpiar</button>
             </div>
-            <div id="lista-estaciones-disponibles">
-                
-            </div>
+
+            <div id="lista-estaciones-disponibles"></div>
             <div id="detalle-estacion"></div>
 
             <div class="seccion-filtros">
@@ -90,11 +84,11 @@
         </section>
     </div>
         
-    
-
     <h2>Mapa de Cochabamba</h2>
     <div id="map"></div>
 
+
     <script type="module" src="../src/presenter.js" defer></script>
+    <script type="module" src="../src/ticket.js" defer></script>
 </body>
 </html>

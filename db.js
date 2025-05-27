@@ -142,12 +142,41 @@ export const operariosDB = [
 ];
 
 export const conductoresDB = [
-  { 
-    ci: "7654321",
-    nombre: "Carlos",
-    contraseña: "cl1234",
-    ticketsHistorial: []
-  },
+{
+  ci: "7654321",
+  nombre: "Carlos",
+  contraseña: "cl1234",
+  ticketsHistorial: [
+    {
+      idTicket: "45231",
+      estacionDeCarga: "Estación Norte",
+      fecha: "2025-05-24",
+      montoCargado: 15,
+      horaCarga: "09:30:00"
+    },
+    {
+      idTicket: "45232",
+      estacionDeCarga: "Estación Norte",
+      fecha: "2025-05-25",
+      montoCargado: 20,
+      horaCarga: "10:15:00"
+    },
+    {
+      idTicket: "45233",
+      estacionDeCarga: "Estación Sur",
+      fecha: "2025-05-25",
+      montoCargado: 25,
+      horaCarga: "12:00:00"
+    },
+    {
+      idTicket: "45234",
+      estacionDeCarga: "Estación Este",
+      fecha: "2025-05-26",
+      montoCargado: 30,
+      horaCarga: "14:45:00"
+    }
+  ]
+},
   { 
     ci: "5484555", 
     nombre: "Sofía Herrera", 

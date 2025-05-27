@@ -39,7 +39,7 @@ describe("Sacar un ticket para un turno de una estación", () => {
     });
         it("deberia registrar el ticket del conductor en su historial tickets", () => {
         let conductor = conductoresDB.find(c => c.nombre === 'Carlos');
-        expect(conductor.ticketsHistorial.length).toEqual(2);
+        expect(conductor.ticketsHistorial.length).toEqual(6);
         console.log(conductor.ticketsHistorial)
     });
 });

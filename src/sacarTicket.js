@@ -1,9 +1,12 @@
 import {estacionesDB, conductoresDB} from "../db.js";
 
 export function sacarTicket(nombreConductor, placaIngresada, carnet, montoIngresado, estacionSeleccionada, idTicketSeleccionado) {
-    let estacion = estacionesDB.find(e => e.nombre === estacionSeleccionada);
-    let conductor = conductoresDB.find(c => c.nombre === nombreConductor);
-    let ticket = estacion.ticketsCombustible.find(t => t.idTicket === idTicketSeleccionado);
+    const estacion = estacionesDB.find(e => e.nombre === estacionSeleccionada);
+    console.log(estacion);
+    const conductor = conductoresDB.find(c => c.nombre === nombreConductor);
+    console.log(conductor);
+    const ticket = estacion.ticketsCombustible.find(t => t.idTicket === Number(idTicketSeleccionado));
+    console.log(ticket);
     if (ticket.cantidadIngresada < montoIngresado) {
         throw new Error("No hay suficiente combustible disponible");
     }

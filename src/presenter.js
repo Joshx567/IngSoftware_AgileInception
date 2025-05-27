@@ -33,7 +33,7 @@ document.querySelectorAll('.topnav_2 a').forEach(link => {
 });
 function mostrarEstaciones(estaciones) {
   listaEstacionesDiv.innerHTML = ''; 
-  detalleEstacionDiv = null; 
+  let detalleEstacionActual = null;
 
   estaciones.forEach(est => {
     const div = document.createElement('div');
@@ -57,9 +57,11 @@ function mostrarEstaciones(estaciones) {
     div.appendChild(detalleDiv);
 
     div.querySelector('button').addEventListener('click', () => {
-      if (window.detalleEstacionDiv && window.detalleEstacionDiv !== detalleDiv) {
-        window.detalleEstacionDiv.style.display = 'none';
+      if (detalleEstacionActual && detalleEstacionActual !== detalleDiv) {
+        detalleEstacionActual.style.display = 'none';
       }
+      detalleEstacionActual = detalleDiv;
+
 
       const estaVisible = detalleDiv.style.display === 'block';
       detalleDiv.style.display = estaVisible ? 'none' : 'block';
@@ -70,28 +72,6 @@ function mostrarEstaciones(estaciones) {
       }
     });
 
-    listaEstacionesDiv.appendChild(div);
-  });
-}
-
-function mostrarEstaciones(estaciones) {
-  listaEstacionesDiv.innerHTML = '';
-
-  estaciones.forEach(est => {
-    const div = document.createElement('div');
-    div.classList.add('item-estacion');
-    div.style.border = '1px solid #ccc';
-    div.style.marginBottom = '10px';
-    div.style.padding = '8px';
-
-    div.innerHTML = `
-      <h4>${est.nombre}</h4>
-      <p><strong>Ubicación:</strong> ${est.ubicacion}</p>
-      <p><strong>Horario:</strong> ${est.horaApertura} - ${est.horaCierre}</p>
-      <button data-id="${est.id}">Ver detalles</button>
-    `;
-
-    div.querySelector('button').addEventListener('click', () => mostrarDetalleEstacion(est));
     listaEstacionesDiv.appendChild(div);
   });
 }
@@ -173,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const lat = -17.393318;
   const lon = -66.154874;
   L.marker([lat, lon]).addTo(map)
-    .bindPopup('<b>Estacuón Principal</b><br>Av. Heroínas esquina Lanza.')
+    .bindPopup('<b>Estación Principal</b><br>Av. Heroínas esquina Lanza.')
     .openPopup();
 });
 
@@ -225,7 +205,7 @@ function cargarOpcionesEstaciones() {
   });
 }
 
-window.addEventListener("DOMContentLoaded", cargarOpcionesEstaciones);
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const selectEstacion = document.querySelector("#estacion-ticket-id");
@@ -327,3 +307,4 @@ document.querySelectorAll('.topnav a').forEach(link => {
     });
 });
 
+window.addEventListener("DOMContentLoaded", cargarOpcionesEstaciones);
