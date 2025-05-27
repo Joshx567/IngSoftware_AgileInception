@@ -153,7 +153,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const lat = -17.393318;
   const lon = -66.154874;
   L.marker([lat, lon]).addTo(map)
-    .bindPopup('<b>Estación Principal</b><br>Av. Heroínas esquina Lanza.')
+    .bindPopup('<b>Estación Principal</b><br>Av. Heroínas, Esquina Lanza.')
+    .openPopup();
+
+  const lat2=-17.369215838873334;
+  const lon2 =-66.14460121364037
+   L.marker([lat2, lon2]).addTo(map)
+    .bindPopup('<b>Estación Norte</b><br>Av. América, Esquina Rosales.')
+    .openPopup();
+
+  const lat3=-17.36521014528152;
+  const lon3 =-66.16028461010787;
+   L.marker([lat3, lon3]).addTo(map)
+    .bindPopup('<b>Estación Sur</b><br>Av. Circunvalación')
     .openPopup();
 });
 

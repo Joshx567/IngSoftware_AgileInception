@@ -91,14 +91,25 @@ function cargarMisTickets() {
   }
 
   btnCancelLatestTicket.disabled = false;
-  const ultimosDos = historial.slice(-2).reverse(); 
-  const pasados = historial.slice(0, historial.length - 2);
+  const ultimosDos = historial.slice(-1).reverse(); 
+  const pasados = historial.slice(0, historial.length - 1);
+
+  const crearTicketHTML = (ticket) => {
+    const div = document.createElement("div");
+    div.className = "ticket-card";
+    div.innerHTML = `
+      <strong>Ticket #${ticket.idTicket}</strong><br>
+      <span><strong>Estación:</strong> ${ticket.estacionDeCarga}</span><br>
+      <span><strong>Fecha:</strong> ${ticket.fecha}</span><br>
+      <span><strong>Cantidad:</strong> ${ticket.montoCargado} litros</span><br>
+      <span><strong>Hora:</strong> ${ticket.horaCarga}</span>
+    `;
+    return div;
+  };
 
   myLatestTicketDiv.innerHTML = "";
   ultimosDos.forEach(ticket => {
-    const div = document.createElement("div");
-    div.textContent = `Ticket #${ticket.idTicket} - ${ticket.estacionDeCarga} - ${ticket.fecha} - ${ticket.montoCargado} litros - Hora: ${ticket.horaCarga}`;
-    myLatestTicketDiv.appendChild(div);
+    myLatestTicketDiv.appendChild(crearTicketHTML(ticket));
   });
 
   allOtherTicketsDiv.innerHTML = "";
@@ -106,9 +117,7 @@ function cargarMisTickets() {
     allOtherTicketsDiv.textContent = "No hay tickets pasados.";
   } else {
     pasados.forEach(ticket => {
-      const div = document.createElement("div");
-      div.textContent = `Ticket #${ticket.idTicket} - ${ticket.estacionDeCarga} - ${ticket.fecha} - ${ticket.montoCargado} litros - Hora: ${ticket.horaCarga}`;
-      allOtherTicketsDiv.appendChild(div);
+      allOtherTicketsDiv.appendChild(crearTicketHTML(ticket));
     });
   }
 }

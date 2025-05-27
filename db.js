@@ -2,7 +2,7 @@ export const estacionesDB = [
     {
       id: 1,
       nombre: "Estación Principal",
-      ubicacion: "Av. Libertador",
+      ubicacion: "Av. Heroínas, Esq. Lanza",
       horaApertura: "06:00",
       horaCierre: "22:00",
       combustibles: {
